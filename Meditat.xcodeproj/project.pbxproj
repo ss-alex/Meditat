@@ -1,0 +1,354 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D961250F25DF7A2A00B80C42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961250E25DF7A2A00B80C42 /* AppDelegate.swift */; };
+		D961251125DF7A2A00B80C42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961251025DF7A2A00B80C42 /* SceneDelegate.swift */; };
+		D961251325DF7A2A00B80C42 /* MeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961251225DF7A2A00B80C42 /* MeditationVC.swift */; };
+		D961251825DF7A3000B80C42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D961251725DF7A3000B80C42 /* Assets.xcassets */; };
+		D961251B25DF7A3000B80C42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D961251925DF7A3000B80C42 /* LaunchScreen.storyboard */; };
+		D9809C1125DF7E5200DF52BF /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1025DF7E5200DF52BF /* MeVC.swift */; };
+		D9809C1425DF7E9600DF52BF /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1325DF7E9600DF52BF /* SettingsVC.swift */; };
+		D9809C1725DF7F7B00DF52BF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1625DF7F7B00DF52BF /* TabBarController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D961250B25DF7A2A00B80C42 /* Meditat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meditat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D961250E25DF7A2A00B80C42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D961251025DF7A2A00B80C42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D961251225DF7A2A00B80C42 /* MeditationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationVC.swift; sourceTree = "<group>"; };
+		D961251725DF7A3000B80C42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D961251A25DF7A3000B80C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D961251C25DF7A3000B80C42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9809C1025DF7E5200DF52BF /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
+		D9809C1325DF7E9600DF52BF /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		D9809C1625DF7F7B00DF52BF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D961250825DF7A2A00B80C42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D961250225DF7A2A00B80C42 = {
+			isa = PBXGroup;
+			children = (
+				D9809C1625DF7F7B00DF52BF /* TabBarController.swift */,
+				D961250D25DF7A2A00B80C42 /* Meditat */,
+				D961250C25DF7A2A00B80C42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D961250C25DF7A2A00B80C42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D961250B25DF7A2A00B80C42 /* Meditat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D961250D25DF7A2A00B80C42 /* Meditat */ = {
+			isa = PBXGroup;
+			children = (
+				D9809C0E25DF7D9B00DF52BF /* ViewControllers */,
+				D961250E25DF7A2A00B80C42 /* AppDelegate.swift */,
+				D961251025DF7A2A00B80C42 /* SceneDelegate.swift */,
+				D961251725DF7A3000B80C42 /* Assets.xcassets */,
+				D961251925DF7A3000B80C42 /* LaunchScreen.storyboard */,
+				D961251C25DF7A3000B80C42 /* Info.plist */,
+			);
+			path = Meditat;
+			sourceTree = "<group>";
+		};
+		D9809C0E25DF7D9B00DF52BF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D961251225DF7A2A00B80C42 /* MeditationVC.swift */,
+				D9809C1025DF7E5200DF52BF /* MeVC.swift */,
+				D9809C1325DF7E9600DF52BF /* SettingsVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D961250A25DF7A2A00B80C42 /* Meditat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D961251F25DF7A3000B80C42 /* Build configuration list for PBXNativeTarget "Meditat" */;
+			buildPhases = (
+				D961250725DF7A2A00B80C42 /* Sources */,
+				D961250825DF7A2A00B80C42 /* Frameworks */,
+				D961250925DF7A2A00B80C42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Meditat;
+			productName = Meditat;
+			productReference = D961250B25DF7A2A00B80C42 /* Meditat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D961250325DF7A2A00B80C42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					D961250A25DF7A2A00B80C42 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = D961250625DF7A2A00B80C42 /* Build configuration list for PBXProject "Meditat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D961250225DF7A2A00B80C42;
+			productRefGroup = D961250C25DF7A2A00B80C42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D961250A25DF7A2A00B80C42 /* Meditat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D961250925DF7A2A00B80C42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D961251B25DF7A3000B80C42 /* LaunchScreen.storyboard in Resources */,
+				D961251825DF7A3000B80C42 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D961250725DF7A2A00B80C42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9809C1125DF7E5200DF52BF /* MeVC.swift in Sources */,
+				D961251325DF7A2A00B80C42 /* MeditationVC.swift in Sources */,
+				D961250F25DF7A2A00B80C42 /* AppDelegate.swift in Sources */,
+				D9809C1725DF7F7B00DF52BF /* TabBarController.swift in Sources */,
+				D961251125DF7A2A00B80C42 /* SceneDelegate.swift in Sources */,
+				D9809C1425DF7E9600DF52BF /* SettingsVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D961251925DF7A3000B80C42 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D961251A25DF7A3000B80C42 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D961251D25DF7A3000B80C42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D961251E25DF7A3000B80C42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D961252025DF7A3000B80C42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AYMCPRG445;
+				INFOPLIST_FILE = Meditat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Alexey-Kirpichnikov.Meditat";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D961252125DF7A3000B80C42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AYMCPRG445;
+				INFOPLIST_FILE = Meditat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Alexey-Kirpichnikov.Meditat";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D961250625DF7A2A00B80C42 /* Build configuration list for PBXProject "Meditat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D961251D25DF7A3000B80C42 /* Debug */,
+				D961251E25DF7A3000B80C42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D961251F25DF7A3000B80C42 /* Build configuration list for PBXNativeTarget "Meditat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D961252025DF7A3000B80C42 /* Debug */,
+				D961252125DF7A3000B80C42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D961250325DF7A2A00B80C42 /* Project object */;
+}
