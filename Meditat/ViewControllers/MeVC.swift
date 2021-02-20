@@ -12,5 +12,11 @@ class MeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray2
+        setupNavigation()
+    }
+    
+    private func setupNavigation() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        //self.title = "Мои результаты"
     }
 }

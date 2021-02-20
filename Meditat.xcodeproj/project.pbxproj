@@ -15,6 +15,7 @@
 		D9809C1125DF7E5200DF52BF /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1025DF7E5200DF52BF /* MeVC.swift */; };
 		D9809C1425DF7E9600DF52BF /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1325DF7E9600DF52BF /* SettingsVC.swift */; };
 		D9809C1725DF7F7B00DF52BF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1625DF7F7B00DF52BF /* TabBarController.swift */; };
+		D9809C1D25DFD9D800DF52BF /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1C25DFD9D800DF52BF /* Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D9809C1025DF7E5200DF52BF /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		D9809C1325DF7E9600DF52BF /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		D9809C1625DF7F7B00DF52BF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		D9809C1C25DFD9D800DF52BF /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +46,6 @@
 		D961250225DF7A2A00B80C42 = {
 			isa = PBXGroup;
 			children = (
-				D9809C1625DF7F7B00DF52BF /* TabBarController.swift */,
 				D961250D25DF7A2A00B80C42 /* Meditat */,
 				D961250C25DF7A2A00B80C42 /* Products */,
 			);
@@ -61,6 +62,7 @@
 		D961250D25DF7A2A00B80C42 /* Meditat */ = {
 			isa = PBXGroup;
 			children = (
+				D9809C1F25DFD9E100DF52BF /* Cell */,
 				D9809C0E25DF7D9B00DF52BF /* ViewControllers */,
 				D961250E25DF7A2A00B80C42 /* AppDelegate.swift */,
 				D961251025DF7A2A00B80C42 /* SceneDelegate.swift */,
@@ -74,11 +76,28 @@
 		D9809C0E25DF7D9B00DF52BF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D9809C1A25DF899D00DF52BF /* TabViewController */,
 				D961251225DF7A2A00B80C42 /* MeditationVC.swift */,
 				D9809C1025DF7E5200DF52BF /* MeVC.swift */,
 				D9809C1325DF7E9600DF52BF /* SettingsVC.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D9809C1A25DF899D00DF52BF /* TabViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D9809C1625DF7F7B00DF52BF /* TabBarController.swift */,
+			);
+			path = TabViewController;
+			sourceTree = "<group>";
+		};
+		D9809C1F25DFD9E100DF52BF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D9809C1C25DFD9D800DF52BF /* Button.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +171,7 @@
 			files = (
 				D9809C1125DF7E5200DF52BF /* MeVC.swift in Sources */,
 				D961251325DF7A2A00B80C42 /* MeditationVC.swift in Sources */,
+				D9809C1D25DFD9D800DF52BF /* Button.swift in Sources */,
 				D961250F25DF7A2A00B80C42 /* AppDelegate.swift in Sources */,
 				D9809C1725DF7F7B00DF52BF /* TabBarController.swift in Sources */,
 				D961251125DF7A2A00B80C42 /* SceneDelegate.swift in Sources */,
