@@ -15,6 +15,7 @@ class SubcategoryVC: UIViewController {
     
     let tableView = UITableView()
     var state: State
+    var subcatArray: [SubcatModel]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +24,9 @@ class SubcategoryVC: UIViewController {
         setupTitle()
     }
     
-    init (state: State) {
+    init (state: State, subcatArray: [SubcatModel] ) {
         self.state = state
+        self.subcatArray = subcatArray
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -40,7 +42,7 @@ class SubcategoryVC: UIViewController {
         switch state {
         case .subcategory(let subcategory):
             self.title = subcategory.title
-            print("SubcategoryVC. setupVC. subcategory.title = \(subcategory.title)")
+            print("subcat.count = \(subcatArray.count)")
         }
         
     }
@@ -57,23 +59,29 @@ class SubcategoryVC: UIViewController {
         ])
         
         tableView.backgroundColor = .systemGray2
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.reuseID)
         tableView.delegate = self
+        tableView.dataSource = self
     }
 }
 
 extension SubcategoryVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 40
     }
 }
 
 extension SubcategoryVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return subcatArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.reuseID,
+                                                 for: indexPath) as! TableViewCell
+        let i = subcatArray[indexPath.row]
+        print("i = \(i)")
+        cell.setupCell(model: i)
         return cell
     }
     

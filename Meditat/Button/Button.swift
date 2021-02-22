@@ -24,7 +24,6 @@ class Button: UIButton {
     
     private func configure() {
         layer.cornerRadius = 5
-        //backgroundColor = .systemPink
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

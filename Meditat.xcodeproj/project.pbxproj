@@ -13,7 +13,8 @@
 		D961251825DF7A3000B80C42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D961251725DF7A3000B80C42 /* Assets.xcassets */; };
 		D961251B25DF7A3000B80C42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D961251925DF7A3000B80C42 /* LaunchScreen.storyboard */; };
 		D961547325E3B9BE00DF06FA /* SubcategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961547225E3B9BE00DF06FA /* SubcategoryVC.swift */; };
-		D961547725E3BADD00DF06FA /* SubcategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961547625E3BADD00DF06FA /* SubcategoryModel.swift */; };
+		D961547725E3BADD00DF06FA /* SubcatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961547625E3BADD00DF06FA /* SubcatModel.swift */; };
+		D961547E25E3E07800DF06FA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961547D25E3E07800DF06FA /* TableViewCell.swift */; };
 		D9809C1125DF7E5200DF52BF /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1025DF7E5200DF52BF /* MeVC.swift */; };
 		D9809C1425DF7E9600DF52BF /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1325DF7E9600DF52BF /* SettingsVC.swift */; };
 		D9809C1725DF7F7B00DF52BF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1625DF7F7B00DF52BF /* TabBarController.swift */; };
@@ -30,7 +31,8 @@
 		D961251A25DF7A3000B80C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D961251C25DF7A3000B80C42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D961547225E3B9BE00DF06FA /* SubcategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryVC.swift; sourceTree = "<group>"; };
-		D961547625E3BADD00DF06FA /* SubcategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryModel.swift; sourceTree = "<group>"; };
+		D961547625E3BADD00DF06FA /* SubcatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcatModel.swift; sourceTree = "<group>"; };
+		D961547D25E3E07800DF06FA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		D9809C1025DF7E5200DF52BF /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		D9809C1325DF7E9600DF52BF /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		D9809C1625DF7F7B00DF52BF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		D961250D25DF7A2A00B80C42 /* Meditat */ = {
 			isa = PBXGroup;
 			children = (
+				D961547C25E3E03600DF06FA /* Button */,
 				D9809C1F25DFD9E100DF52BF /* Cell */,
 				D9809C1A25DF899D00DF52BF /* TabViewController */,
 				D9809C0E25DF7D9B00DF52BF /* ViewControllers */,
@@ -85,10 +88,18 @@
 		D961547125E3B97D00DF06FA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				D961547625E3BADD00DF06FA /* SubcategoryModel.swift */,
+				D961547625E3BADD00DF06FA /* SubcatModel.swift */,
 				D961547225E3B9BE00DF06FA /* SubcategoryVC.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		D961547C25E3E03600DF06FA /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				D9809C1C25DFD9D800DF52BF /* Button.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		D9809C0E25DF7D9B00DF52BF /* ViewControllers */ = {
@@ -112,7 +123,7 @@
 		D9809C1F25DFD9E100DF52BF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D9809C1C25DFD9D800DF52BF /* Button.swift */,
+				D961547D25E3E07800DF06FA /* TableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -192,10 +203,11 @@
 				D9809C1D25DFD9D800DF52BF /* Button.swift in Sources */,
 				D961250F25DF7A2A00B80C42 /* AppDelegate.swift in Sources */,
 				D9809C1725DF7F7B00DF52BF /* TabBarController.swift in Sources */,
+				D961547E25E3E07800DF06FA /* TableViewCell.swift in Sources */,
 				D961251125DF7A2A00B80C42 /* SceneDelegate.swift in Sources */,
 				D9809C1425DF7E9600DF52BF /* SettingsVC.swift in Sources */,
 				D961547325E3B9BE00DF06FA /* SubcategoryVC.swift in Sources */,
-				D961547725E3BADD00DF06FA /* SubcategoryModel.swift in Sources */,
+				D961547725E3BADD00DF06FA /* SubcatModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

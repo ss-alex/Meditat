@@ -183,43 +183,43 @@ class MeditationVC: UIViewController {
     }
     
     @objc func pushSubview1() {
-        let vc = SubcategoryVC(state: .subcategory(.сон))
+        let vc = SubcategoryVC(state: .subcategory(.сон), subcatArray: Subcategory.сон.subcategoryArray)
         navigationController?.pushViewController(vc, animated: true)
     }
     @objc func pushSubview2() {
-        let vc = SubcategoryVC(state: .subcategory(.пауза))
+        let vc = SubcategoryVC(state: .subcategory(.пауза), subcatArray: Subcategory.пауза.subcategoryArray)
         navigationController?.pushViewController(vc, animated: true)
     }
     @objc func pushSubview3() {
-        let vc = SubcategoryVC(state: .subcategory(.на_работе))
+        let vc = SubcategoryVC(state: .subcategory(.на_работе), subcatArray: Subcategory.на_работе.subcategoryArray)
         navigationController?.pushViewController(vc, animated: true)
     }
     @objc func pushSubview4() {
-        let vc = SubcategoryVC(state: .subcategory(.сложный_день))
+        let vc = SubcategoryVC(state: .subcategory(.сложный_день), subcatArray: Subcategory.сложный_день.subcategoryArray)
         navigationController?.pushViewController(vc, animated: true)
     }
     @objc func pushSubview5() {
-        let vc = SubcategoryVC(state: .subcategory(.на_прогулке))
+        let vc = SubcategoryVC(state: .subcategory(.на_прогулке), subcatArray: Subcategory.на_прогулке.subcategoryArray)
         navigationController?.pushViewController(vc, animated: true)
     }
     @objc func pushSubview6() {
-        let vc = SubcategoryVC(state: .subcategory(.sos))
+        let vc = SubcategoryVC(state: .subcategory(.sos), subcatArray: Subcategory.sos.subcategoryArray)
         navigationController?.pushViewController(vc, animated: true)
     }
     @objc func pushSubview7() {
-        let vc = SubcategoryVC(state: .subcategory(.утро))
+        let vc = SubcategoryVC(state: .subcategory(.утро), subcatArray: Subcategory.утро.subcategoryArray)
         navigationController?.pushViewController(vc, animated: true)
     }
     @objc func pushSubview8() {
-        let vc = SubcategoryVC(state: .subcategory(.после_работы))
+        let vc = SubcategoryVC(state: .subcategory(.после_работы), subcatArray: Subcategory.после_работы.subcategoryArray)
         navigationController?.pushViewController(vc, animated: true)
     }
     @objc func pushSubview9() {
-        let vc = SubcategoryVC(state: .subcategory(.большое_событие))
+        let vc = SubcategoryVC(state: .subcategory(.большое_событие), subcatArray: Subcategory.большое_событие.subcategoryArray)
         navigationController?.pushViewController(vc, animated: true)
     }
     @objc func pushSubview10() {
-        let vc = SubcategoryVC(state: .subcategory(.в_дороге))
+        let vc = SubcategoryVC(state: .subcategory(.в_дороге), subcatArray: Subcategory.в_дороге.subcategoryArray)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
