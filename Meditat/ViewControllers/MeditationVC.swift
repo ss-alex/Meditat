@@ -21,25 +21,24 @@ class MeditationVC: UIViewController {
     let button10 = Button(title: "В ДОРОГЕ")
     
     
-    let firstHStack = UIStackView()
+    /*let firstHStack = UIStackView()
     let secondHStack = UIStackView()
     let thirdHStack = UIStackView()
     let fourthHStack = UIStackView()
-    let VStack = UIStackView()
+    let VStack = UIStackView()*/
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray
         setupNavigation()
-        setupLayout()
+        setupButtons()
     }
     
     private func setupNavigation() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        //self.title = "Что вы делаете?"
     }
     
-    private func setupLayout() {
+    private func setupButtons() {
         setupButton1()
         setupButton2()
         setupButton3()
@@ -62,6 +61,7 @@ class MeditationVC: UIViewController {
             button1.heightAnchor.constraint(equalToConstant: 72)
         ])
         button1.backgroundColor = .systemPink
+        button1.addTarget(self, action: #selector(pushSubview1), for: .touchUpInside)
     }
     
     private func setupButton2() {
@@ -74,6 +74,7 @@ class MeditationVC: UIViewController {
             button2.heightAnchor.constraint(equalToConstant: 72)
         ])
         button2.backgroundColor = .systemPink
+        button2.addTarget(self, action: #selector(pushSubview2), for: .touchUpInside)
     }
     
     private func setupButton3() {
@@ -86,6 +87,7 @@ class MeditationVC: UIViewController {
             button3.heightAnchor.constraint(equalToConstant: 72)
         ])
         button3.backgroundColor = .systemPink
+        button3.addTarget(self, action: #selector(pushSubview3), for: .touchUpInside)
     }
     
     private func setupButton4() {
@@ -98,6 +100,7 @@ class MeditationVC: UIViewController {
             button4.heightAnchor.constraint(equalToConstant: 72)
         ])
         button4.backgroundColor = .systemPink
+        button4.addTarget(self, action: #selector(pushSubview4), for: .touchUpInside)
     }
     
     private func setupButton5() {
@@ -110,6 +113,7 @@ class MeditationVC: UIViewController {
             button5.heightAnchor.constraint(equalToConstant: 72)
         ])
         button5.backgroundColor = .systemPink
+        button5.addTarget(self, action: #selector(pushSubview5), for: .touchUpInside)
     }
     
     private func setupButton6() {
@@ -122,6 +126,7 @@ class MeditationVC: UIViewController {
             button6.heightAnchor.constraint(equalToConstant: 72)
         ])
         button6.backgroundColor = .systemPink
+        button6.addTarget(self, action: #selector(pushSubview6), for: .touchUpInside)
     }
     
     private func setupButton7() {
@@ -134,6 +139,7 @@ class MeditationVC: UIViewController {
             button7.heightAnchor.constraint(equalToConstant: 72)
         ])
         button7.backgroundColor = .systemPink
+        button7.addTarget(self, action: #selector(pushSubview7), for: .touchUpInside)
     }
     
     private func setupButton8() {
@@ -146,6 +152,7 @@ class MeditationVC: UIViewController {
             button8.heightAnchor.constraint(equalToConstant: 72)
         ])
         button8.backgroundColor = .systemPink
+        button8.addTarget(self, action: #selector(pushSubview8), for: .touchUpInside)
     }
     
     private func setupButton9() {
@@ -159,6 +166,7 @@ class MeditationVC: UIViewController {
             button9.heightAnchor.constraint(equalToConstant: 72)
         ])
         button9.backgroundColor = .systemPink
+        button9.addTarget(self, action: #selector(pushSubview9), for: .touchUpInside)
     }
     
     private func setupButton10() {
@@ -171,8 +179,49 @@ class MeditationVC: UIViewController {
             button10.heightAnchor.constraint(equalToConstant: 72)
         ])
         button10.backgroundColor = .systemPink
+        button10.addTarget(self, action: #selector(pushSubview10), for: .touchUpInside)
     }
     
+    @objc func pushSubview1() {
+        let vc = SubcategoryVC(state: .subcategory(.сон))
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc func pushSubview2() {
+        let vc = SubcategoryVC(state: .subcategory(.пауза))
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc func pushSubview3() {
+        let vc = SubcategoryVC(state: .subcategory(.на_работе))
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc func pushSubview4() {
+        let vc = SubcategoryVC(state: .subcategory(.сложный_день))
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc func pushSubview5() {
+        let vc = SubcategoryVC(state: .subcategory(.на_прогулке))
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc func pushSubview6() {
+        let vc = SubcategoryVC(state: .subcategory(.sos))
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc func pushSubview7() {
+        let vc = SubcategoryVC(state: .subcategory(.утро))
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc func pushSubview8() {
+        let vc = SubcategoryVC(state: .subcategory(.после_работы))
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc func pushSubview9() {
+        let vc = SubcategoryVC(state: .subcategory(.большое_событие))
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc func pushSubview10() {
+        let vc = SubcategoryVC(state: .subcategory(.в_дороге))
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 

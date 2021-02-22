@@ -12,10 +12,13 @@
 		D961251325DF7A2A00B80C42 /* MeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961251225DF7A2A00B80C42 /* MeditationVC.swift */; };
 		D961251825DF7A3000B80C42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D961251725DF7A3000B80C42 /* Assets.xcassets */; };
 		D961251B25DF7A3000B80C42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D961251925DF7A3000B80C42 /* LaunchScreen.storyboard */; };
+		D961547325E3B9BE00DF06FA /* SubcategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961547225E3B9BE00DF06FA /* SubcategoryVC.swift */; };
+		D961547725E3BADD00DF06FA /* SubcategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961547625E3BADD00DF06FA /* SubcategoryModel.swift */; };
 		D9809C1125DF7E5200DF52BF /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1025DF7E5200DF52BF /* MeVC.swift */; };
 		D9809C1425DF7E9600DF52BF /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1325DF7E9600DF52BF /* SettingsVC.swift */; };
 		D9809C1725DF7F7B00DF52BF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1625DF7F7B00DF52BF /* TabBarController.swift */; };
 		D9809C1D25DFD9D800DF52BF /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1C25DFD9D800DF52BF /* Button.swift */; };
+		D9809C4625E14EF300DF52BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9809C4525E14EF300DF52BF /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +29,13 @@
 		D961251725DF7A3000B80C42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D961251A25DF7A3000B80C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D961251C25DF7A3000B80C42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D961547225E3B9BE00DF06FA /* SubcategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryVC.swift; sourceTree = "<group>"; };
+		D961547625E3BADD00DF06FA /* SubcategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryModel.swift; sourceTree = "<group>"; };
 		D9809C1025DF7E5200DF52BF /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		D9809C1325DF7E9600DF52BF /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		D9809C1625DF7F7B00DF52BF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D9809C1C25DFD9D800DF52BF /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		D9809C4525E14EF300DF52BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,20 +69,31 @@
 			isa = PBXGroup;
 			children = (
 				D9809C1F25DFD9E100DF52BF /* Cell */,
+				D9809C1A25DF899D00DF52BF /* TabViewController */,
 				D9809C0E25DF7D9B00DF52BF /* ViewControllers */,
+				D961547125E3B97D00DF06FA /* Screens */,
 				D961250E25DF7A2A00B80C42 /* AppDelegate.swift */,
 				D961251025DF7A2A00B80C42 /* SceneDelegate.swift */,
 				D961251725DF7A3000B80C42 /* Assets.xcassets */,
 				D961251925DF7A3000B80C42 /* LaunchScreen.storyboard */,
+				D9809C4525E14EF300DF52BF /* GoogleService-Info.plist */,
 				D961251C25DF7A3000B80C42 /* Info.plist */,
 			);
 			path = Meditat;
 			sourceTree = "<group>";
 		};
+		D961547125E3B97D00DF06FA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D961547625E3BADD00DF06FA /* SubcategoryModel.swift */,
+				D961547225E3B9BE00DF06FA /* SubcategoryVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		D9809C0E25DF7D9B00DF52BF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D9809C1A25DF899D00DF52BF /* TabViewController */,
 				D961251225DF7A2A00B80C42 /* MeditationVC.swift */,
 				D9809C1025DF7E5200DF52BF /* MeVC.swift */,
 				D9809C1325DF7E9600DF52BF /* SettingsVC.swift */,
@@ -159,6 +176,7 @@
 			files = (
 				D961251B25DF7A3000B80C42 /* LaunchScreen.storyboard in Resources */,
 				D961251825DF7A3000B80C42 /* Assets.xcassets in Resources */,
+				D9809C4625E14EF300DF52BF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +194,8 @@
 				D9809C1725DF7F7B00DF52BF /* TabBarController.swift in Sources */,
 				D961251125DF7A2A00B80C42 /* SceneDelegate.swift in Sources */,
 				D9809C1425DF7E9600DF52BF /* SettingsVC.swift in Sources */,
+				D961547325E3B9BE00DF06FA /* SubcategoryVC.swift in Sources */,
+				D961547725E3BADD00DF06FA /* SubcategoryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AYMCPRG445;
 				INFOPLIST_FILE = Meditat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,6 +357,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AYMCPRG445;
 				INFOPLIST_FILE = Meditat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
