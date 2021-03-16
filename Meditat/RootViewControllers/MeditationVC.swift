@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class MeditationVC: UIViewController {
     
@@ -20,12 +21,9 @@ class MeditationVC: UIViewController {
     let button9 = Button(title: "БОЛЬШОЕ СОБЫТИЕ")
     let button10 = Button(title: "В ДОРОГЕ")
     
-    
-    /*let firstHStack = UIStackView()
-    let secondHStack = UIStackView()
-    let thirdHStack = UIStackView()
-    let fourthHStack = UIStackView()
-    let VStack = UIStackView()*/
+    var adudioReference: StorageReference {
+        return Storage.storage().reference().child("audios")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -223,93 +221,3 @@ class MeditationVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-
-
-/*private func setupLayout() {
-    configureButtons()
-    HStackOne()
-}
- 
-
-
-private func configureButtons() {
-    view.addSubview(button1)
-    view.addSubview(button2)
-    
-    NSLayoutConstraint.activate([
-        button1.widthAnchor.constraint(equalToConstant: 20)
-    ])
-}
-
-private func HStackOne() {
-    firstHStack.axis = .horizontal
-    firstHStack.distribution = .fillEqually
-    firstHStack.addArrangedSubview(button1)
-    firstHStack.addArrangedSubview(button2)
-    firstHStack.translatesAutoresizingMaskIntoConstraints = false
-    
-    NSLayoutConstraint.activate([
-        firstHStack.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-        firstHStack.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-        firstHStack.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-    ])
-}
-
-private func HStackTwo() {
-    secondHStack.axis = .horizontal
-    secondHStack.distribution = .fillEqually
-    secondHStack.addArrangedSubview(button3)
-    secondHStack.addArrangedSubview(button4)
-    secondHStack.translatesAutoresizingMaskIntoConstraints = false
-    
-    NSLayoutConstraint.activate([
-        secondHStack.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-        secondHStack.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-        secondHStack.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-    ])
-}
-
-private func HStackThree() {
-    thirdHStack.axis = .horizontal
-    thirdHStack.distribution = .fillEqually
-    thirdHStack.addArrangedSubview(button5)
-    thirdHStack.addArrangedSubview(button6)
-    thirdHStack.translatesAutoresizingMaskIntoConstraints = false
-    
-    NSLayoutConstraint.activate([
-        thirdHStack.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-        thirdHStack.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-        thirdHStack.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-    ])
-}
-
-private func HStackFour() {
-    fourthHStack.axis = .horizontal
-    fourthHStack.distribution = .fillEqually
-    fourthHStack.addArrangedSubview(button7)
-    fourthHStack.addArrangedSubview(button8)
-    fourthHStack.translatesAutoresizingMaskIntoConstraints = false
-    
-    NSLayoutConstraint.activate([
-        fourthHStack.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-        fourthHStack.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-        fourthHStack.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-    ])
-}
-
-private func setupVStack() {
-    VStack.axis = .vertical
-    VStack.distribution = .fillEqually
-    VStack.addArrangedSubview(firstHStack)
-    VStack.addArrangedSubview(secondHStack)
-    VStack.addArrangedSubview(thirdHStack)
-    VStack.addArrangedSubview(fourthHStack)
-    
-    NSLayoutConstraint.activate([
-        VStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-        VStack.leftAnchor.constraint(equalTo: view.leftAnchor),
-        VStack.rightAnchor.constraint(equalTo: view.rightAnchor),
-        VStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-    ])
-}*/
-

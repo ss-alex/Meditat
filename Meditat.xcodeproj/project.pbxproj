@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27A0B8D838547504F72D5B4B /* Pods_Meditat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82678FC919EB33BA883C5DE /* Pods_Meditat.framework */; };
 		D961250F25DF7A2A00B80C42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961250E25DF7A2A00B80C42 /* AppDelegate.swift */; };
 		D961251125DF7A2A00B80C42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961251025DF7A2A00B80C42 /* SceneDelegate.swift */; };
 		D961251325DF7A2A00B80C42 /* MeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961251225DF7A2A00B80C42 /* MeditationVC.swift */; };
@@ -20,9 +21,14 @@
 		D9809C1725DF7F7B00DF52BF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1625DF7F7B00DF52BF /* TabBarController.swift */; };
 		D9809C1D25DFD9D800DF52BF /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1C25DFD9D800DF52BF /* Button.swift */; };
 		D9809C4625E14EF300DF52BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9809C4525E14EF300DF52BF /* GoogleService-Info.plist */; };
+		D9B8BA1725FF5E5D001D91CD /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B8BA1625FF5E5D001D91CD /* PlayerVC.swift */; };
+		D9B8BA1E2600582F001D91CD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B8BA1D2600582F001D91CD /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EDF643001249FD7277BC50A /* Pods-Meditat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meditat.debug.xcconfig"; path = "Target Support Files/Pods-Meditat/Pods-Meditat.debug.xcconfig"; sourceTree = "<group>"; };
+		40C5C875D9F047FB6D9E28CC /* Pods-Meditat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meditat.release.xcconfig"; path = "Target Support Files/Pods-Meditat/Pods-Meditat.release.xcconfig"; sourceTree = "<group>"; };
+		D82678FC919EB33BA883C5DE /* Pods_Meditat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meditat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D961250B25DF7A2A00B80C42 /* Meditat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meditat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D961250E25DF7A2A00B80C42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D961251025DF7A2A00B80C42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +44,9 @@
 		D9809C1625DF7F7B00DF52BF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D9809C1C25DFD9D800DF52BF /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		D9809C4525E14EF300DF52BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D9B8BA1625FF5E5D001D91CD /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
+		D9B8BA1C2600582E001D91CD /* Meditat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Meditat.entitlements; sourceTree = "<group>"; };
+		D9B8BA1D2600582F001D91CD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +54,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27A0B8D838547504F72D5B4B /* Pods_Meditat.framework in Frameworks */,
+				D9B8BA1E2600582F001D91CD /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		591ABFD72A830CF73CAA18BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9B8BA1D2600582F001D91CD /* AudioToolbox.framework */,
+				D82678FC919EB33BA883C5DE /* Pods_Meditat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E9B2D74C4DCA2A1E8AF3921 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1EDF643001249FD7277BC50A /* Pods-Meditat.debug.xcconfig */,
+				40C5C875D9F047FB6D9E28CC /* Pods-Meditat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D961250225DF7A2A00B80C42 = {
 			isa = PBXGroup;
 			children = (
 				D961250D25DF7A2A00B80C42 /* Meditat */,
 				D961250C25DF7A2A00B80C42 /* Products */,
+				5E9B2D74C4DCA2A1E8AF3921 /* Pods */,
+				591ABFD72A830CF73CAA18BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,11 +101,12 @@
 		D961250D25DF7A2A00B80C42 /* Meditat */ = {
 			isa = PBXGroup;
 			children = (
+				D9B8BA1C2600582E001D91CD /* Meditat.entitlements */,
 				D961547C25E3E03600DF06FA /* Button */,
 				D9809C1F25DFD9E100DF52BF /* Cell */,
 				D9809C1A25DF899D00DF52BF /* TabViewController */,
-				D9809C0E25DF7D9B00DF52BF /* ViewControllers */,
-				D961547125E3B97D00DF06FA /* Screens */,
+				D9809C0E25DF7D9B00DF52BF /* RootViewControllers */,
+				D961547125E3B97D00DF06FA /* SubViewControllers */,
 				D961250E25DF7A2A00B80C42 /* AppDelegate.swift */,
 				D961251025DF7A2A00B80C42 /* SceneDelegate.swift */,
 				D961251725DF7A3000B80C42 /* Assets.xcassets */,
@@ -85,13 +117,13 @@
 			path = Meditat;
 			sourceTree = "<group>";
 		};
-		D961547125E3B97D00DF06FA /* Screens */ = {
+		D961547125E3B97D00DF06FA /* SubViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D961547625E3BADD00DF06FA /* SubcatModel.swift */,
-				D961547225E3B9BE00DF06FA /* SubcategoryVC.swift */,
+				D9B8BA1225FF5D8F001D91CD /* SubcategoriesVC */,
+				D9B8BA1425FF5DE0001D91CD /* PlayerVC */,
 			);
-			path = Screens;
+			path = SubViewControllers;
 			sourceTree = "<group>";
 		};
 		D961547C25E3E03600DF06FA /* Button */ = {
@@ -102,14 +134,14 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
-		D9809C0E25DF7D9B00DF52BF /* ViewControllers */ = {
+		D9809C0E25DF7D9B00DF52BF /* RootViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				D961251225DF7A2A00B80C42 /* MeditationVC.swift */,
 				D9809C1025DF7E5200DF52BF /* MeVC.swift */,
 				D9809C1325DF7E9600DF52BF /* SettingsVC.swift */,
 			);
-			path = ViewControllers;
+			path = RootViewControllers;
 			sourceTree = "<group>";
 		};
 		D9809C1A25DF899D00DF52BF /* TabViewController */ = {
@@ -128,6 +160,23 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		D9B8BA1225FF5D8F001D91CD /* SubcategoriesVC */ = {
+			isa = PBXGroup;
+			children = (
+				D961547625E3BADD00DF06FA /* SubcatModel.swift */,
+				D961547225E3B9BE00DF06FA /* SubcategoryVC.swift */,
+			);
+			path = SubcategoriesVC;
+			sourceTree = "<group>";
+		};
+		D9B8BA1425FF5DE0001D91CD /* PlayerVC */ = {
+			isa = PBXGroup;
+			children = (
+				D9B8BA1625FF5E5D001D91CD /* PlayerVC.swift */,
+			);
+			path = PlayerVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D961251F25DF7A3000B80C42 /* Build configuration list for PBXNativeTarget "Meditat" */;
 			buildPhases = (
+				CC5462829F46AFD865A23C04 /* [CP] Check Pods Manifest.lock */,
 				D961250725DF7A2A00B80C42 /* Sources */,
 				D961250825DF7A2A00B80C42 /* Frameworks */,
 				D961250925DF7A2A00B80C42 /* Resources */,
+				1B3C42DB9C59E968FC566D9C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +244,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B3C42DB9C59E968FC566D9C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Meditat/Pods-Meditat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Meditat/Pods-Meditat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Meditat/Pods-Meditat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC5462829F46AFD865A23C04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Meditat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D961250725DF7A2A00B80C42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -208,6 +301,7 @@
 				D9809C1425DF7E9600DF52BF /* SettingsVC.swift in Sources */,
 				D961547325E3B9BE00DF06FA /* SubcategoryVC.swift in Sources */,
 				D961547725E3BADD00DF06FA /* SubcatModel.swift in Sources */,
+				D9B8BA1725FF5E5D001D91CD /* PlayerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,13 +437,15 @@
 		};
 		D961252025DF7A3000B80C42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EDF643001249FD7277BC50A /* Pods-Meditat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Meditat/Meditat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AYMCPRG445;
 				INFOPLIST_FILE = Meditat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,13 +459,15 @@
 		};
 		D961252125DF7A3000B80C42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40C5C875D9F047FB6D9E28CC /* Pods-Meditat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Meditat/Meditat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AYMCPRG445;
 				INFOPLIST_FILE = Meditat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

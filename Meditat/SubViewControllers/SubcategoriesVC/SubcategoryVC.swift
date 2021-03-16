@@ -44,7 +44,6 @@ class SubcategoryVC: UIViewController {
             self.title = subcategory.title
             print("subcat.count = \(subcatArray.count)")
         }
-        
     }
     
     private func setupTableView() {
@@ -69,6 +68,22 @@ extension SubcategoryVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let destVC = PlayerVC()
+        let navController = UINavigationController(rootViewController: destVC)
+        present(navController, animated: true)
+        
+        //tableView.deselectRow(at: indexPath, animated: true)
+        
+        //let movie = movies[indexPath.row]
+        //let destVC  = MovieScreenVC()
+        //destVC.movieID = movie.id
+        
+        //let navController = UINavigationController(rootViewController: destVC)
+        //present(navController, animated: true)
+    }
 }
 
 extension SubcategoryVC: UITableViewDataSource {
@@ -84,6 +99,4 @@ extension SubcategoryVC: UITableViewDataSource {
         cell.setupCell(model: i)
         return cell
     }
-    
-    
 }
