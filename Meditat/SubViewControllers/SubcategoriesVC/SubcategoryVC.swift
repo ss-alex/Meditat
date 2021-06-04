@@ -74,15 +74,6 @@ extension SubcategoryVC: UITableViewDelegate {
         let destVC = PlayerVC()
         let navController = UINavigationController(rootViewController: destVC)
         present(navController, animated: true)
-        
-        //tableView.deselectRow(at: indexPath, animated: true)
-        
-        //let movie = movies[indexPath.row]
-        //let destVC  = MovieScreenVC()
-        //destVC.movieID = movie.id
-        
-        //let navController = UINavigationController(rootViewController: destVC)
-        //present(navController, animated: true)
     }
 }
 

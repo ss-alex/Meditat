@@ -9,23 +9,43 @@ import UIKit
 import AVFoundation
 import Firebase
 
+//сверстать дами экран (кнопка плей и стоп)
+//два текст филда для вывода времени: время текущее / время полное
+//слайдер для перемотки времени
+//второе: внутри логика:
+//проигрывание плей/стоп аудио
+//текущее время проигрывания связано с реальным временем, сколько было проиграно
+//слайдер связан логикой с плеером и временем
+//все проициаилазировано отдельными методами через viewDidLoad()
+
+// logics (step 1):
+// stop / play song
+// retrieve song (inside presenter)
+
+protocol PlayerViewInput: class {
+    func setCurrentTimeLabelText(text: String)
+    func setOverallDurationLabel(text: String)
+}
+
 class PlayerVC: UIViewController {
     
-    //var player: AVAudioPlayer?
-    var player: AVPlayer?
-    
     private let playerButton = UIButton()
+    private let currentTimeLabel = UILabel()
+    private let overallDurationLabel = UILabel()
     
-    //let cache = NSCache<NSString, AVFileType>()
+    var presenter: PlayerPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = PlayerPresenter(view: self)
         setupUI()
-        setupPlayerButton()
     }
     
     private func setupUI() {
         view.backgroundColor = .gray
+        setupPlayerButton()
+        setupCurrentTimeLabel()
+        setupOverallDurationLabel()
     }
     
     private func setupPlayerButton() {
@@ -40,73 +60,51 @@ class PlayerVC: UIViewController {
         ])
         
         playerButton.backgroundColor = .systemPink
-        playerButton.addTarget(self, action: #selector(playAudio), for: .touchUpInside)
+        playerButton.addTarget(self, action: #selector(playButtonPushed), for: .touchUpInside)
     }
     
-    @objc func playAudio() {
-        /*if let player = player, player.isPlaying {
-            player.stop()
-            
-        } else {
-            
-            let urlString = "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
-            //let url = URL(string: urlString)
-            
-            do {
-                try AVAudioSession.sharedInstance().setMode(.default)
-                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-                
-                //guard let url = url else { return }
-                //player = try AVAudioPlayer(contentsOf: url)
-                
-                //guard let player = player else { return }
-                //player.play()
-                
-            } catch {
-                print("something went wrong")
-            }
-        }*/
-        
-        /*let urlString = "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
-        let storage = Storage.storage().reference(forURL: urlString)
-        storage.downloadURL { (url, error) in
-            if error != nil {
-                print(error)
-            } else {
-                self.player = AVPlayer(playerItem: AVPlayerItem(url: url!))
-                self.player?.play()
-            }
-        }*/
-        let urlString = "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
-        //let urlString = "gs://meditat-3a91c.appspot.com/Audios/birds.wav"
-        let url = URL(string: urlString)
-        self.player = AVPlayer(playerItem: AVPlayerItem(url: url!))
-        self.player?.play()
-        print("player is set to play")
+    @objc func playButtonPushed() {
+        presenter.initAudioPlayerByUrl()
     }
     
-    /*private func downloadFileFromURL(url: URL) {
-        var downloadTask: URLSessionDownloadTask
-        downloadTask = URLSession.shared.downloadTask(with: url, completionHandler: { (url, response, error) in
-            
-        })
-    }*/
+    private func setupCurrentTimeLabel() {
+        view.addSubview(currentTimeLabel)
+        currentTimeLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            currentTimeLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            currentTimeLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            currentTimeLabel.heightAnchor.constraint(equalToConstant: 40),
+            currentTimeLabel.widthAnchor.constraint(equalToConstant: 80)
+        ])
+        
+        currentTimeLabel.backgroundColor = .systemBlue
+    }
     
-    /*func downloadAudio(from urlString: String, completed: @escaping (AVAudioFile) -> Void) {
-        let cacheKey = NSString(string: urlString)
+    private func setupOverallDurationLabel() {
+        view.addSubview(overallDurationLabel)
+        overallDurationLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        if let audio = cache.object(forKey: cacheKey) {
-            completed(audio)
-            return
-        }
+        NSLayoutConstraint.activate([
+            overallDurationLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            overallDurationLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            overallDurationLabel.heightAnchor.constraint(equalToConstant: 40),
+            overallDurationLabel.widthAnchor.constraint(equalToConstant: 80)
+        ])
         
-        guard let url = URL(string: urlString) else {
-            completed()
-            return
-        }
-        
-        
-        
-    }*/
-    
+        overallDurationLabel.backgroundColor = .systemBlue
+    }
 }
+
+extension PlayerVC: PlayerViewInput {
+    
+    func setCurrentTimeLabelText(text: String) {
+        currentTimeLabel.text = text
+    }
+    
+    func setOverallDurationLabel(text: String) {
+        overallDurationLabel.text = text
+    }
+}
+
+
