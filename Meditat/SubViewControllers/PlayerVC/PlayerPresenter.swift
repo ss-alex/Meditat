@@ -5,13 +5,16 @@
 //  Created by Alexey Kirpichnikov on 2021/5/29.
 //
 
-import Foundation
-import UIKit
 import AVFoundation
 
 protocol PlayerPresenterProtocol {
     init(view: PlayerViewInput)
-    func initAudioPlayerByUrl()
+    func initPlayerByUrl()
+    func setSliderMaxValue()
+    func addPlayerObserver()
+    func setPlayerValueToZero()
+    func setPlayerValueToTargetTime()
+    func togglePlayerButton()
 }
 
 enum Urls: String {
@@ -22,13 +25,13 @@ class PlayerPresenter: PlayerPresenterProtocol {
     var player: AVPlayer?
     unowned let view: PlayerViewInput
     
+    var overallDuration: Float64?
+    
     required init(view: PlayerViewInput) {
         self.view = view
     }
     
-    func initAudioPlayerByUrl() {
-        print("Presenter fetch sound from url and play it.")
-        
+    func initPlayerByUrl() {
         let urlString = Urls.sound
         guard let url = URL(string: urlString.rawValue) else { return }
         
@@ -42,31 +45,68 @@ class PlayerPresenter: PlayerPresenterProtocol {
         let currentDuration: CMTime = playerItem.currentTime()
         let currentSeconds: Float64 = CMTimeGetSeconds(currentDuration)
         self.view.setCurrentTimeLabelText(text: String(currentSeconds))
+        
+        overallDuration = seconds
     }
-}
-
-/*private let url = "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_1MG.mp3"
-private var isPlayerSetToPlay: Bool = false*/
-
-///******
-//private var audioPlayer: AVAudioPlayer?
-
-/*@objc func play2() {
+    
+    func setSliderMaxValue() {
+        guard let durationInSeconds = overallDuration else { return }
+        self.view.setSliderMaxValue(seconds: durationInSeconds)
+    }
+    
+    func addPlayerObserver() {
+        player?.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(1, preferredTimescale: 1),
+                                        queue: DispatchQueue.main,
+                                        using: { (CMTime) -> Void in
+                                            if self.player?.currentItem?.status == .some(.readyToPlay) {
+                                                let currentTime: Float64 = CMTimeGetSeconds((self.player?.currentTime())!)
+                                                self.view.setSliderCurrentValue(currentTime)
+                                                
+                                                let stringForCurrentTime = self.stringFromTimeInterval(interval: currentTime)
+                                                self.view.setCurrentTimeLabelText(text: stringForCurrentTime)
+                                            }
+                                            
+                                            let playbackLikelyToKeepUp = self.player?.currentItem?.isPlaybackLikelyToKeepUp
+                                            if playbackLikelyToKeepUp == false {
+                                                print("IsBuffering")
+                                            } else {
+                                                print("Buffering completed")
+                                            }
+                                        })
+    }
+    
+    private func stringFromTimeInterval(interval: TimeInterval) -> String {
+        let interval = Int(interval)
+        let seconds = interval % 60
+        let minutes = (interval / 60) % 60
+        let hours = (interval / 3600)
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    }
+    
+    func setPlayerValueToZero() {
+        self.view.setSliderValueToZero()
+        let targetTime: CMTime = CMTimeMake(value: 0, timescale: 1)
+        player?.seek(to: targetTime)
+    }
+    
+    func setPlayerValueToTargetTime() {
+        let value = self.view.showSliderTargetTimeInCMTime()
+        player?.seek(to: value)
+        
+        if player?.rate == 0 {
+            player?.play()
+            self.view.setButtonImageToPause()
+        }
+    }
+    
+    func togglePlayerButton() {
+        if player?.rate == 0 {
+            player?.play()
+            self.view.setButtonImageToPause()
+        } else {
+            player?.pause()
+            self.view.setButtonImageToPlay()
+        }
+    }
     
 }
-
-private func checkIfFileExists(with link: String, completion: @escaping ((_ filePath: URL) -> Void)) {
-    let urlString = link.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-    
-}
-
-private func play(URL: URL) {
-    do {
-        audioPlayer = try AVAudioPlayer(contentsOf: URL, fileTypeHint: .none)
-        audioPlayer?.prepareToPlay()
-        audioPlayer?.delegate = self
-        audioPlayer?.play()
-    } catch {
-        audioPlayer = nil
-    }
-}*/
