@@ -2,7 +2,7 @@
 //  CongratsVC.swift
 //  Meditat
 //
-//  Created by Лена Мырленко on 2021/6/12.
+//  Created by Alexey Kirpichnikov on 2021/6/12.
 //
 import UIKit
 

@@ -166,7 +166,8 @@ extension PlayerVC: PlayerViewInput {
     }
     
     func showCongratsScreen() {
-        self.navigationController?.present(CongratsVC(), animated: true, completion: nil)
+        //self.navigationController?.present(CongratsVC(), animated: true, completion: nil)
+        navigationController?.pushViewController(CongratsVC(), animated: true)
     }
 }
 

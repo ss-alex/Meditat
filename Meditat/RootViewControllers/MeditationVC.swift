@@ -180,44 +180,65 @@ class MeditationVC: UIViewController {
         button10.addTarget(self, action: #selector(pushSubview10), for: .touchUpInside)
     }
     
+    //MARK:- OBJC Methods
+    
     @objc func pushSubview1() {
         let vc = SubcategoryVC(state: .subcategory(.сон), subcatArray: Subcategory.сон.subcategoryArray)
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
+    
     @objc func pushSubview2() {
         let vc = SubcategoryVC(state: .subcategory(.пауза), subcatArray: Subcategory.пауза.subcategoryArray)
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
+    
     @objc func pushSubview3() {
         let vc = SubcategoryVC(state: .subcategory(.на_работе), subcatArray: Subcategory.на_работе.subcategoryArray)
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
+    
     @objc func pushSubview4() {
         let vc = SubcategoryVC(state: .subcategory(.сложный_день), subcatArray: Subcategory.сложный_день.subcategoryArray)
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
+    
     @objc func pushSubview5() {
         let vc = SubcategoryVC(state: .subcategory(.на_прогулке), subcatArray: Subcategory.на_прогулке.subcategoryArray)
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
+    
     @objc func pushSubview6() {
         let vc = SubcategoryVC(state: .subcategory(.sos), subcatArray: Subcategory.sos.subcategoryArray)
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
+    
     @objc func pushSubview7() {
         let vc = SubcategoryVC(state: .subcategory(.утро), subcatArray: Subcategory.утро.subcategoryArray)
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
+    
     @objc func pushSubview8() {
         let vc = SubcategoryVC(state: .subcategory(.после_работы), subcatArray: Subcategory.после_работы.subcategoryArray)
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
+    
     @objc func pushSubview9() {
         let vc = SubcategoryVC(state: .subcategory(.большое_событие), subcatArray: Subcategory.большое_событие.subcategoryArray)
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
+    
     @objc func pushSubview10() {
         let vc = SubcategoryVC(state: .subcategory(.в_дороге), subcatArray: Subcategory.в_дороге.subcategoryArray)
+        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
 }

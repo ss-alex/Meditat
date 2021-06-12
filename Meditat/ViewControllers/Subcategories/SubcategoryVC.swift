@@ -38,6 +38,10 @@ class SubcategoryVC: UIViewController {
         view.backgroundColor = .lightGray
     }
     
+    private func setupTabBar() {
+        //navigationController?.tabBarController.
+    }
+    
     private func setupTitle() {
         switch state {
         case .subcategory(let subcategory):
@@ -70,10 +74,9 @@ extension SubcategoryVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let destVC = PlayerVC()
-        let navController = UINavigationController(rootViewController: destVC)
-        present(navController, animated: true)
+        destVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(destVC, animated: true)
     }
 }
 
@@ -85,9 +88,8 @@ extension SubcategoryVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.reuseID,
                                                  for: indexPath) as! TableViewCell
-        let i = subcatArray[indexPath.row]
-        print("i = \(i)")
-        cell.setupCell(model: i)
+        let subcategory = subcatArray[indexPath.row]
+        cell.setupCell(model: subcategory)
         return cell
     }
 }
