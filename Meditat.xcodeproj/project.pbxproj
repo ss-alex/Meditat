@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		27A0B8D838547504F72D5B4B /* Pods_Meditat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82678FC919EB33BA883C5DE /* Pods_Meditat.framework */; };
 		D903B41A2662100D001FD7EA /* PlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D903B4192662100D001FD7EA /* PlayerPresenter.swift */; };
+		D93F4F9626748F8A00F69C14 /* CongratsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F4F9526748F8A00F69C14 /* CongratsVC.swift */; };
 		D961250F25DF7A2A00B80C42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961250E25DF7A2A00B80C42 /* AppDelegate.swift */; };
 		D961251125DF7A2A00B80C42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961251025DF7A2A00B80C42 /* SceneDelegate.swift */; };
 		D961251325DF7A2A00B80C42 /* MeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961251225DF7A2A00B80C42 /* MeditationVC.swift */; };
@@ -31,6 +32,7 @@
 		40C5C875D9F047FB6D9E28CC /* Pods-Meditat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meditat.release.xcconfig"; path = "Target Support Files/Pods-Meditat/Pods-Meditat.release.xcconfig"; sourceTree = "<group>"; };
 		D82678FC919EB33BA883C5DE /* Pods_Meditat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meditat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D903B4192662100D001FD7EA /* PlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPresenter.swift; sourceTree = "<group>"; };
+		D93F4F9526748F8A00F69C14 /* CongratsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsVC.swift; sourceTree = "<group>"; };
 		D961250B25DF7A2A00B80C42 /* Meditat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meditat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D961250E25DF7A2A00B80C42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D961251025DF7A2A00B80C42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D93F4F9426748F2900F69C14 /* Congrats */ = {
+			isa = PBXGroup;
+			children = (
+				D93F4F9526748F8A00F69C14 /* CongratsVC.swift */,
+			);
+			path = Congrats;
+			sourceTree = "<group>";
+		};
 		D961250225DF7A2A00B80C42 = {
 			isa = PBXGroup;
 			children = (
@@ -108,7 +118,7 @@
 				D9809C1F25DFD9E100DF52BF /* Cell */,
 				D9809C1A25DF899D00DF52BF /* TabViewController */,
 				D9809C0E25DF7D9B00DF52BF /* RootViewControllers */,
-				D961547125E3B97D00DF06FA /* SubViewControllers */,
+				D961547125E3B97D00DF06FA /* ViewControllers */,
 				D961250E25DF7A2A00B80C42 /* AppDelegate.swift */,
 				D961251025DF7A2A00B80C42 /* SceneDelegate.swift */,
 				D961251725DF7A3000B80C42 /* Assets.xcassets */,
@@ -119,13 +129,14 @@
 			path = Meditat;
 			sourceTree = "<group>";
 		};
-		D961547125E3B97D00DF06FA /* SubViewControllers */ = {
+		D961547125E3B97D00DF06FA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D9B8BA1225FF5D8F001D91CD /* SubcategoriesVC */,
-				D9B8BA1425FF5DE0001D91CD /* PlayerVC */,
+				D9B8BA1225FF5D8F001D91CD /* Subcategories */,
+				D9B8BA1425FF5DE0001D91CD /* Player */,
+				D93F4F9426748F2900F69C14 /* Congrats */,
 			);
-			path = SubViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		D961547C25E3E03600DF06FA /* Button */ = {
@@ -162,22 +173,22 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		D9B8BA1225FF5D8F001D91CD /* SubcategoriesVC */ = {
+		D9B8BA1225FF5D8F001D91CD /* Subcategories */ = {
 			isa = PBXGroup;
 			children = (
 				D961547625E3BADD00DF06FA /* SubcatModel.swift */,
 				D961547225E3B9BE00DF06FA /* SubcategoryVC.swift */,
 			);
-			path = SubcategoriesVC;
+			path = Subcategories;
 			sourceTree = "<group>";
 		};
-		D9B8BA1425FF5DE0001D91CD /* PlayerVC */ = {
+		D9B8BA1425FF5DE0001D91CD /* Player */ = {
 			isa = PBXGroup;
 			children = (
 				D9B8BA1625FF5E5D001D91CD /* PlayerVC.swift */,
 				D903B4192662100D001FD7EA /* PlayerPresenter.swift */,
 			);
-			path = PlayerVC;
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +316,7 @@
 				D961547325E3B9BE00DF06FA /* SubcategoryVC.swift in Sources */,
 				D903B41A2662100D001FD7EA /* PlayerPresenter.swift in Sources */,
 				D961547725E3BADD00DF06FA /* SubcatModel.swift in Sources */,
+				D93F4F9626748F8A00F69C14 /* CongratsVC.swift in Sources */,
 				D9B8BA1725FF5E5D001D91CD /* PlayerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

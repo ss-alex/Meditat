@@ -25,7 +25,8 @@ class PlayerPresenter: PlayerPresenterProtocol {
     var player: AVPlayer?
     unowned let view: PlayerViewInput
     
-    var overallDuration: Float64?
+    private var overallDuration: Float64?
+    private var currentTime: Float64?
     
     required init(view: PlayerViewInput) {
         self.view = view
@@ -57,10 +58,12 @@ class PlayerPresenter: PlayerPresenterProtocol {
     func addPlayerObserver() {
         player?.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(1, preferredTimescale: 1),
                                         queue: DispatchQueue.main,
-                                        using: { (CMTime) -> Void in
+                                        using: { [self] (CMTime) -> Void in
                                             if self.player?.currentItem?.status == .some(.readyToPlay) {
                                                 let currentTime: Float64 = CMTimeGetSeconds((self.player?.currentTime())!)
+                                                self.currentTime = currentTime
                                                 self.view.setSliderCurrentValue(currentTime)
+                                                //showNextScreen(_when: currentTime)
                                                 
                                                 let stringForCurrentTime = self.stringFromTimeInterval(interval: currentTime)
                                                 self.view.setCurrentTimeLabelText(text: stringForCurrentTime)
@@ -68,11 +71,13 @@ class PlayerPresenter: PlayerPresenterProtocol {
                                             
                                             let playbackLikelyToKeepUp = self.player?.currentItem?.isPlaybackLikelyToKeepUp
                                             if playbackLikelyToKeepUp == false {
-                                                print("IsBuffering")
+                                                //print("IsBuffering")
                                             } else {
-                                                print("Buffering completed")
+                                                //print("Buffering completed")
                                             }
                                         })
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidPlayToEnd), name: .AVPlayerItemDidPlayToEndTime, object: nil)
     }
     
     private func stringFromTimeInterval(interval: TimeInterval) -> String {
@@ -84,9 +89,11 @@ class PlayerPresenter: PlayerPresenterProtocol {
     }
     
     func setPlayerValueToZero() {
-        self.view.setSliderValueToZero()
         let targetTime: CMTime = CMTimeMake(value: 0, timescale: 1)
         player?.seek(to: targetTime)
+        view.setSliderValueToZero()
+        view.setButtonImageToPlay()
+        
     }
     
     func setPlayerValueToTargetTime() {
@@ -96,6 +103,7 @@ class PlayerPresenter: PlayerPresenterProtocol {
         if player?.rate == 0 {
             player?.play()
             self.view.setButtonImageToPause()
+            
         }
     }
     
@@ -109,4 +117,13 @@ class PlayerPresenter: PlayerPresenterProtocol {
         }
     }
     
+    private func showNextScreen() {
+        view.showCongratsScreen()
+    }
+    
+    //MARK:- OBJC Methods
+    
+    @objc func playerDidPlayToEnd() {
+        showNextScreen()
+    }
 }

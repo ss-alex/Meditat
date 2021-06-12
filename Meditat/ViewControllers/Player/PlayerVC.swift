@@ -17,6 +17,7 @@ protocol PlayerViewInput: class {
     func showSliderTargetTimeInCMTime() -> CMTime
     func setButtonImageToPlay()
     func setButtonImageToPause()
+    func showCongratsScreen()
 }
 
 class PlayerVC: UIViewController {
@@ -102,7 +103,6 @@ class PlayerVC: UIViewController {
     }
     
     @objc func finishedPlaying(_ myNotification: NSNotification) {
-        // reset player when finished
         presenter.setPlayerValueToZero()
     }
     
@@ -163,6 +163,10 @@ extension PlayerVC: PlayerViewInput {
     
     func setButtonImageToPause() {
         playerButton.setImage(UIImage(systemName: "pause"), for: .normal)
+    }
+    
+    func showCongratsScreen() {
+        self.navigationController?.present(CongratsVC(), animated: true, completion: nil)
     }
 }
 
