@@ -6,14 +6,21 @@
 //
 import UIKit
 
+protocol CongratsViewInput: class {
+    func showMeScreen()
+}
+
 class CongratsVC: UIViewController {
     private let congratsLabel = UILabel()
     private let button = UIButton()
+    
+    var presenter: CongratsPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupUI()
+        setupLogic()
     }
     
     func setupNavigationBar() {
@@ -24,6 +31,10 @@ class CongratsVC: UIViewController {
         view.backgroundColor = .systemBackground
         setupCongratsLabel()
         setupButton()
+    }
+    
+    func setupLogic() {
+        presenter = CongratsPresenter(view: self)
     }
     
     private func setupCongratsLabel() {
@@ -55,5 +66,16 @@ class CongratsVC: UIViewController {
         
         button.backgroundColor = .systemIndigo
         button.setTitle("Ок", for: .normal)
+        button.addTarget(self, action: #selector(pushToMeVC), for: .touchUpInside)
+    }
+    
+    @objc func pushToMeVC() {
+        presenter.pushToMeVC()
+    }
+}
+
+extension CongratsVC: CongratsViewInput {
+    func showMeScreen() {
+        navigationController?.pushViewController(MeVC(), animated: true)
     }
 }

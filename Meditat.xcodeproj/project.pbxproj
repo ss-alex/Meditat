@@ -10,6 +10,7 @@
 		27A0B8D838547504F72D5B4B /* Pods_Meditat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82678FC919EB33BA883C5DE /* Pods_Meditat.framework */; };
 		D903B41A2662100D001FD7EA /* PlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D903B4192662100D001FD7EA /* PlayerPresenter.swift */; };
 		D93F4F9626748F8A00F69C14 /* CongratsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F4F9526748F8A00F69C14 /* CongratsVC.swift */; };
+		D93F4F992674A7A000F69C14 /* CongratsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F4F982674A7A000F69C14 /* CongratsPresenter.swift */; };
 		D961250F25DF7A2A00B80C42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961250E25DF7A2A00B80C42 /* AppDelegate.swift */; };
 		D961251125DF7A2A00B80C42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961251025DF7A2A00B80C42 /* SceneDelegate.swift */; };
 		D961251325DF7A2A00B80C42 /* MeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961251225DF7A2A00B80C42 /* MeditationVC.swift */; };
@@ -33,6 +34,7 @@
 		D82678FC919EB33BA883C5DE /* Pods_Meditat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meditat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D903B4192662100D001FD7EA /* PlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPresenter.swift; sourceTree = "<group>"; };
 		D93F4F9526748F8A00F69C14 /* CongratsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsVC.swift; sourceTree = "<group>"; };
+		D93F4F982674A7A000F69C14 /* CongratsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsPresenter.swift; sourceTree = "<group>"; };
 		D961250B25DF7A2A00B80C42 /* Meditat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meditat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D961250E25DF7A2A00B80C42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D961251025DF7A2A00B80C42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				D93F4F9526748F8A00F69C14 /* CongratsVC.swift */,
+				D93F4F982674A7A000F69C14 /* CongratsPresenter.swift */,
 			);
 			path = Congrats;
 			sourceTree = "<group>";
@@ -176,8 +179,8 @@
 		D9B8BA1225FF5D8F001D91CD /* Subcategories */ = {
 			isa = PBXGroup;
 			children = (
-				D961547625E3BADD00DF06FA /* SubcatModel.swift */,
 				D961547225E3B9BE00DF06FA /* SubcategoryVC.swift */,
+				D961547625E3BADD00DF06FA /* SubcatModel.swift */,
 			);
 			path = Subcategories;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9809C1125DF7E5200DF52BF /* MeVC.swift in Sources */,
+				D93F4F992674A7A000F69C14 /* CongratsPresenter.swift in Sources */,
 				D961251325DF7A2A00B80C42 /* MeditationVC.swift in Sources */,
 				D9809C1D25DFD9D800DF52BF /* Button.swift in Sources */,
 				D961250F25DF7A2A00B80C42 /* AppDelegate.swift in Sources */,
