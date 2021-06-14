@@ -7,6 +7,13 @@
 
 import AVFoundation
 
+// модель для entity
+struct SessionModel {
+    var uuid = UUID()
+    var duration: Float64?
+    var date = Date()
+}
+
 protocol PlayerPresenterProtocol {
     init(view: PlayerViewInput)
     func initPlayerByUrl()
@@ -15,6 +22,8 @@ protocol PlayerPresenterProtocol {
     func setPlayerValueToZero()
     func setPlayerValueToTargetTime()
     func togglePlayerButton()
+    
+    var entity: SessionModel { get }
 }
 
 enum Urls: String {
@@ -28,8 +37,13 @@ class PlayerPresenter: PlayerPresenterProtocol {
     private var overallDuration: Float64?
     private var currentTime: Float64?
     
+    var entity: SessionModel
+    
     required init(view: PlayerViewInput) {
         self.view = view
+        self.entity = SessionModel(uuid: UUID(),
+                                   duration: nil,
+                                   date: Date())
     }
     
     func initPlayerByUrl() {
@@ -41,13 +55,14 @@ class PlayerPresenter: PlayerPresenterProtocol {
         
         let duration: CMTime = playerItem.asset.duration
         let seconds: Float64 = CMTimeGetSeconds(duration)
-        self.view.setOverallDurationLabel(text: String(seconds))
+        view.setOverallDurationLabel(text: String(seconds))
         
         let currentDuration: CMTime = playerItem.currentTime()
         let currentSeconds: Float64 = CMTimeGetSeconds(currentDuration)
-        self.view.setCurrentTimeLabelText(text: String(currentSeconds))
+        view.setCurrentTimeLabelText(text: String(currentSeconds))
         
         overallDuration = seconds
+        entity.duration = seconds
     }
     
     func setSliderMaxValue() {

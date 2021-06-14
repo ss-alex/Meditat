@@ -15,12 +15,22 @@ class CongratsVC: UIViewController {
     private let button = UIButton()
     
     var presenter: CongratsPresenter!
+    var entity: SessionModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupUI()
         setupLogic()
+    }
+    
+    init(entity: SessionModel) {
+        self.entity = entity
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func setupNavigationBar() {
@@ -34,7 +44,7 @@ class CongratsVC: UIViewController {
     }
     
     func setupLogic() {
-        presenter = CongratsPresenter(view: self)
+        presenter = CongratsPresenter(view: self, entity: entity!)
     }
     
     private func setupCongratsLabel() {

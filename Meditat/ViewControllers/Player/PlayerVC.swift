@@ -166,8 +166,8 @@ extension PlayerVC: PlayerViewInput {
     }
     
     func showCongratsScreen() {
-        //self.navigationController?.present(CongratsVC(), animated: true, completion: nil)
-        navigationController?.pushViewController(CongratsVC(), animated: true)
+        let entity = presenter.entity
+        navigationController?.pushViewController(CongratsVC(entity: entity), animated: true)
     }
 }
 

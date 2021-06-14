@@ -11,6 +11,7 @@
 		D903B41A2662100D001FD7EA /* PlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D903B4192662100D001FD7EA /* PlayerPresenter.swift */; };
 		D93F4F9626748F8A00F69C14 /* CongratsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F4F9526748F8A00F69C14 /* CongratsVC.swift */; };
 		D93F4F992674A7A000F69C14 /* CongratsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F4F982674A7A000F69C14 /* CongratsPresenter.swift */; };
+		D93F4FC32677723300F69C14 /* MeditatCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D93F4FC12677723300F69C14 /* MeditatCoreData.xcdatamodeld */; };
 		D961250F25DF7A2A00B80C42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961250E25DF7A2A00B80C42 /* AppDelegate.swift */; };
 		D961251125DF7A2A00B80C42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961251025DF7A2A00B80C42 /* SceneDelegate.swift */; };
 		D961251325DF7A2A00B80C42 /* MeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961251225DF7A2A00B80C42 /* MeditationVC.swift */; };
@@ -35,6 +36,7 @@
 		D903B4192662100D001FD7EA /* PlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPresenter.swift; sourceTree = "<group>"; };
 		D93F4F9526748F8A00F69C14 /* CongratsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsVC.swift; sourceTree = "<group>"; };
 		D93F4F982674A7A000F69C14 /* CongratsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsPresenter.swift; sourceTree = "<group>"; };
+		D93F4FC22677723300F69C14 /* MeditatCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeditatCoreData.xcdatamodel; sourceTree = "<group>"; };
 		D961250B25DF7A2A00B80C42 /* Meditat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meditat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D961250E25DF7A2A00B80C42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D961251025DF7A2A00B80C42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,30 @@
 			path = Congrats;
 			sourceTree = "<group>";
 		};
+		D93F4F9C2676035000F69C14 /* Meditation */ = {
+			isa = PBXGroup;
+			children = (
+				D961251225DF7A2A00B80C42 /* MeditationVC.swift */,
+			);
+			path = Meditation;
+			sourceTree = "<group>";
+		};
+		D93F4F9D2676035E00F69C14 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				D9809C1025DF7E5200DF52BF /* MeVC.swift */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		D93F4F9E2676036700F69C14 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D9809C1325DF7E9600DF52BF /* SettingsVC.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		D961250225DF7A2A00B80C42 = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +144,7 @@
 			children = (
 				D9B8BA1C2600582E001D91CD /* Meditat.entitlements */,
 				D961547C25E3E03600DF06FA /* Button */,
-				D9809C1F25DFD9E100DF52BF /* Cell */,
+				D9809C1F25DFD9E100DF52BF /* Cells */,
 				D9809C1A25DF899D00DF52BF /* TabViewController */,
 				D9809C0E25DF7D9B00DF52BF /* RootViewControllers */,
 				D961547125E3B97D00DF06FA /* ViewControllers */,
@@ -128,6 +154,7 @@
 				D961251925DF7A3000B80C42 /* LaunchScreen.storyboard */,
 				D9809C4525E14EF300DF52BF /* GoogleService-Info.plist */,
 				D961251C25DF7A3000B80C42 /* Info.plist */,
+				D93F4FC12677723300F69C14 /* MeditatCoreData.xcdatamodeld */,
 			);
 			path = Meditat;
 			sourceTree = "<group>";
@@ -153,9 +180,9 @@
 		D9809C0E25DF7D9B00DF52BF /* RootViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D961251225DF7A2A00B80C42 /* MeditationVC.swift */,
-				D9809C1025DF7E5200DF52BF /* MeVC.swift */,
-				D9809C1325DF7E9600DF52BF /* SettingsVC.swift */,
+				D93F4F9C2676035000F69C14 /* Meditation */,
+				D93F4F9D2676035E00F69C14 /* Me */,
+				D93F4F9E2676036700F69C14 /* Settings */,
 			);
 			path = RootViewControllers;
 			sourceTree = "<group>";
@@ -168,12 +195,12 @@
 			path = TabViewController;
 			sourceTree = "<group>";
 		};
-		D9809C1F25DFD9E100DF52BF /* Cell */ = {
+		D9809C1F25DFD9E100DF52BF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				D961547D25E3E07800DF06FA /* TableViewCell.swift */,
 			);
-			path = Cell;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D9B8BA1225FF5D8F001D91CD /* Subcategories */ = {
@@ -317,6 +344,7 @@
 				D961547E25E3E07800DF06FA /* TableViewCell.swift in Sources */,
 				D961251125DF7A2A00B80C42 /* SceneDelegate.swift in Sources */,
 				D9809C1425DF7E9600DF52BF /* SettingsVC.swift in Sources */,
+				D93F4FC32677723300F69C14 /* MeditatCoreData.xcdatamodeld in Sources */,
 				D961547325E3B9BE00DF06FA /* SubcategoryVC.swift in Sources */,
 				D903B41A2662100D001FD7EA /* PlayerPresenter.swift in Sources */,
 				D961547725E3BADD00DF06FA /* SubcatModel.swift in Sources */,
@@ -521,6 +549,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D93F4FC12677723300F69C14 /* MeditatCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D93F4FC22677723300F69C14 /* MeditatCoreData.xcdatamodel */,
+			);
+			currentVersion = D93F4FC22677723300F69C14 /* MeditatCoreData.xcdatamodel */;
+			path = MeditatCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D961250325DF7A2A00B80C42 /* Project object */;
 }
