@@ -20,7 +20,7 @@ protocol PlayerViewInput: class {
     func showCongratsScreen()
 }
 
-class PlayerVC: UIViewController {
+class PlayerView: UIViewController {
     
     private let currentTimeLabel = UILabel()
     private let overallDurationLabel = UILabel()
@@ -127,7 +127,7 @@ class PlayerVC: UIViewController {
     }
 }
 
-extension PlayerVC: PlayerViewInput {
+extension PlayerView: PlayerViewInput {
     
     func setCurrentTimeLabelText(text: String) {
         currentTimeLabel.text = text
@@ -167,7 +167,7 @@ extension PlayerVC: PlayerViewInput {
     
     func showCongratsScreen() {
         let entity = presenter.entity
-        navigationController?.pushViewController(CongratsVC(entity: entity), animated: true)
+        navigationController?.pushViewController(CongratsView(entity: entity), animated: true)
     }
 }
 

@@ -10,7 +10,7 @@ protocol CongratsViewInput: class {
     func showMeScreen()
 }
 
-class CongratsVC: UIViewController {
+class CongratsView: UIViewController {
     private let congratsLabel = UILabel()
     private let button = UIButton()
     
@@ -44,7 +44,7 @@ class CongratsVC: UIViewController {
     }
     
     func setupLogic() {
-        presenter = CongratsPresenter(view: self, entity: entity!)
+        presenter = CongratsPresenter(view: self, entity: entity ?? SessionModel())
     }
     
     private func setupCongratsLabel() {
@@ -84,8 +84,8 @@ class CongratsVC: UIViewController {
     }
 }
 
-extension CongratsVC: CongratsViewInput {
+extension CongratsView: CongratsViewInput {
     func showMeScreen() {
-        navigationController?.pushViewController(MeVC(), animated: true)
+        navigationController?.pushViewController(MeView(entity: presenter.entity!), animated: true)
     }
 }

@@ -14,20 +14,20 @@ class TabBarController: UITabBarController {
     }
     
     private func setupMeditationVC() -> UINavigationController {
-        let meditationVC = MeditationVC()
-        meditationVC.title = "Meдитация"
-        return UINavigationController(rootViewController: meditationVC)
+        let meditationView = MeditationView()
+        meditationView.title = "Meдитация"
+        return UINavigationController(rootViewController: meditationView)
     }
     
     private func setupMeVC() -> UINavigationController {
-        let meVC = MeVC()
-        meVC.title = "Я"
-        return UINavigationController(rootViewController: meVC)
+        let meView = MeView(entity: SessionModel())
+        meView.title = "Я"
+        return UINavigationController(rootViewController: meView)
     }
     
     private func setupSettingsVC() -> UINavigationController {
-        let settingsVC = SettingsVC()
-        settingsVC.title = "Настройки"
-        return UINavigationController(rootViewController: settingsVC)
+        let settingsView = SettingsView()
+        settingsView.title = "Настройки"
+        return UINavigationController(rootViewController: settingsView)
     }
 }

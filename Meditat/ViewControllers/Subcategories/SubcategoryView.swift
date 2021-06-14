@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SubcategoryVC: UIViewController {
+class SubcategoryView: UIViewController {
     
     enum State {
         case subcategory(Subcategory)
@@ -68,19 +68,19 @@ class SubcategoryVC: UIViewController {
     }
 }
 
-extension SubcategoryVC: UITableViewDelegate {
+extension SubcategoryView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let destVC = PlayerVC()
+        let destVC = PlayerView()
         destVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(destVC, animated: true)
     }
 }
 
-extension SubcategoryVC: UITableViewDataSource {
+extension SubcategoryView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return subcatArray.count
     }
