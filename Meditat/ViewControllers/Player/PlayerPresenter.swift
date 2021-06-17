@@ -7,13 +7,6 @@
 
 import AVFoundation
 
-// модель для entity
-struct SessionModel {
-    var uuid = UUID()
-    var duration: Float64?
-    var date = Date()
-}
-
 protocol PlayerPresenterProtocol {
     init(view: PlayerViewInput)
     func initPlayerByUrl()

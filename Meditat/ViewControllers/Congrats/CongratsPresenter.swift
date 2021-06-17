@@ -25,6 +25,7 @@ class CongratsPresenter: CongratsPresenterProtocol {
     func pushToMeVC() {
         view.showMeScreen()
         saveEntity()
+        fetchSavedEntity()
     }
     
     func saveEntity() {
@@ -46,15 +47,24 @@ class CongratsPresenter: CongratsPresenterProtocol {
     
     // this method can be used in MeVC Presenter
     func fetchSavedEntity() {
+        let duration = [Float64]()
+        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchedData = NSFetchRequest<NSFetchRequestResult>(entityName: "Sessions")
         
         do {
-            let result = try managedContext.fetch(fetchedData)
-            for data in result as! [NSManagedObject] {
+            let result = try managedContext.fetch(fetchedData) as! [NSManagedObject]
+                print("--->>> result = \(result)")
+            let x = result.compactMap { $0 }
+            print("--->>> x = \(x)")
+            let y = result.compactMap { $0.value(forKey: "duration") }
+            print("--->>> x = \(y)")
+            
+            for data in result /*as! [NSManagedObject]*/ {
                 print("--->>> uuid = \(data.value(forKey: "uuid") as Any)")
                 print("--->>> duration = \(data.value(forKey: "duration") as Any)")
+                //duration.append(data.value(forKey: "duration"))
                 print("--->>> date = \(data.value(forKey: "date") as Any)")
             }
         } catch {

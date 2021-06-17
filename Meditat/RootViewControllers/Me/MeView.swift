@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol MeViewInput: class {
+    
+}
+
 class MeView: UIViewController {
     
     let sessionNumber = UILabel()
@@ -17,6 +21,7 @@ class MeView: UIViewController {
     let overallTimeText = UILabel()
     
     var entity: SessionModel?
+    var presenter: MePresenter!
     
     init(entity: SessionModel) {
         self.entity = entity
@@ -32,6 +37,11 @@ class MeView: UIViewController {
         view.backgroundColor = .systemGray2
         setupNavigation()
         setupUI()
+        setupLogic()
+    }
+    
+    private func setupLogic() {
+        presenter = MePresenter(view: self)
     }
     
     private func setupNavigation() {
@@ -133,4 +143,8 @@ class MeView: UIViewController {
         overallTimeText.backgroundColor = .systemPink
         overallTimeText.text = "Всего минут"
     }
+}
+
+extension MeView: MeViewInput {
+    
 }
