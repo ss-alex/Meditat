@@ -8,6 +8,7 @@
 import UIKit
 
 protocol MeViewInput: class {
+    func setSessionSequenceText(_ number: Int)
     func setMeditationNumber(_ number: Int)
     func setupOverallTimeLabel(_ timeString: String)
 }
@@ -43,6 +44,7 @@ class MeView: UIViewController {
     
     private func setupLogic() {
         presenter = MePresenter(view: self)
+        presenter.setSessionSequence()
         presenter.setMeditationNumber()
         presenter.setOverallTime()
     }
@@ -156,5 +158,9 @@ extension MeView: MeViewInput {
     
     func setMeditationNumber(_ number: Int) {
         meditationNumber.text = "\(number)"
+    }
+    
+    func setSessionSequenceText(_ number: Int) {
+        sessionSequence.text = "\(number)"
     }
 }
