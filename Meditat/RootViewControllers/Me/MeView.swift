@@ -8,13 +8,14 @@
 import UIKit
 
 protocol MeViewInput: class {
-    
+    func setMeditationNumber(_ number: Int)
+    func setupOverallTimeLabel(_ timeString: String)
 }
 
 class MeView: UIViewController {
     
-    let sessionNumber = UILabel()
-    let sessionText = UILabel()
+    let sessionSequence = UILabel()
+    let sessionSequenceText = UILabel()
     let meditationNumber = UILabel()
     let meditationText = UILabel()
     let overallTime = UILabel()
@@ -42,6 +43,8 @@ class MeView: UIViewController {
     
     private func setupLogic() {
         presenter = MePresenter(view: self)
+        presenter.setMeditationNumber()
+        presenter.setOverallTime()
     }
     
     private func setupNavigation() {
@@ -49,41 +52,41 @@ class MeView: UIViewController {
     }
     
     private func setupUI() {
-        setSessionNumber()
-        setSessionText()
+        setSessionSequenceLabel()
+        setSessionSequenceTextLabel()
         setMeditationNumber()
         setMeditationText()
         setOverallTime()
         setOverallTimeText()
     }
     
-    private func setSessionNumber() {
-        view.addSubview(sessionNumber)
-        sessionNumber.translatesAutoresizingMaskIntoConstraints = false
+    private func setSessionSequenceLabel() {
+        view.addSubview(sessionSequence)
+        sessionSequence.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            sessionNumber.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
-            sessionNumber.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            sessionNumber.widthAnchor.constraint(equalToConstant: 40),
-            sessionNumber.heightAnchor.constraint(equalToConstant: 40)
+            sessionSequence.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
+            sessionSequence.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            sessionSequence.widthAnchor.constraint(equalToConstant: 40),
+            sessionSequence.heightAnchor.constraint(equalToConstant: 40)
         ])
         
-        sessionNumber.backgroundColor = .systemPink
+        sessionSequence.backgroundColor = .systemPink
     }
     
-    private func setSessionText() {
-        view.addSubview(sessionText)
-        sessionText.translatesAutoresizingMaskIntoConstraints = false
+    private func setSessionSequenceTextLabel() {
+        view.addSubview(sessionSequenceText)
+        sessionSequenceText.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            sessionText.topAnchor.constraint(equalTo: sessionNumber.bottomAnchor, constant: 10),
-            sessionText.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            sessionText.widthAnchor.constraint(equalToConstant: 200),
-            sessionText.heightAnchor.constraint(equalToConstant: 40)
+            sessionSequenceText.topAnchor.constraint(equalTo: sessionSequence.bottomAnchor, constant: 10),
+            sessionSequenceText.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            sessionSequenceText.widthAnchor.constraint(equalToConstant: 200),
+            sessionSequenceText.heightAnchor.constraint(equalToConstant: 40)
         ])
         
-        sessionText.backgroundColor = .systemPink
-        sessionText.text = "Сессий подряд"
+        sessionSequenceText.backgroundColor = .systemPink
+        sessionSequenceText.text = "Сессий подряд"
     }
     
     private func setMeditationNumber() {
@@ -91,7 +94,7 @@ class MeView: UIViewController {
         meditationNumber.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            meditationNumber.topAnchor.constraint(equalTo: sessionText.bottomAnchor, constant: 10),
+            meditationNumber.topAnchor.constraint(equalTo: sessionSequenceText.bottomAnchor, constant: 10),
             meditationNumber.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             meditationNumber.widthAnchor.constraint(equalToConstant: 40),
             meditationNumber.heightAnchor.constraint(equalToConstant: 40)
@@ -147,4 +150,11 @@ class MeView: UIViewController {
 
 extension MeView: MeViewInput {
     
+    func setupOverallTimeLabel(_ timeString: String) {
+        overallTime.text = "\(timeString)"
+    }
+    
+    func setMeditationNumber(_ number: Int) {
+        meditationNumber.text = "\(number)"
+    }
 }

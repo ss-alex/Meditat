@@ -55,7 +55,7 @@ class CongratsPresenter: CongratsPresenterProtocol {
         
         do {
             let result = try managedContext.fetch(fetchedData) as! [NSManagedObject]
-                print("--->>> result = \(result)")
+            /*    print("--->>> result = \(result)")
             let x = result.compactMap { $0 }
             print("--->>> x = \(x)")
             let y = result.compactMap { $0.value(forKey: "duration") }
@@ -66,7 +66,7 @@ class CongratsPresenter: CongratsPresenterProtocol {
                 print("--->>> duration = \(data.value(forKey: "duration") as Any)")
                 //duration.append(data.value(forKey: "duration"))
                 print("--->>> date = \(data.value(forKey: "date") as Any)")
-            }
+            }*/
         } catch {
             print("--->>> error")
         }
