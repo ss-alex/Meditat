@@ -15,12 +15,14 @@ protocol MeViewInput: class {
 
 class MeView: UIViewController {
     
+    let progressLabel = UILabel()
     let sessionSequence = UILabel()
     let sessionSequenceText = UILabel()
     let meditationNumber = UILabel()
     let meditationText = UILabel()
     let overallTime = UILabel()
     let overallTimeText = UILabel()
+    let achievementsLabel = UILabel()
     
     var entity: SessionModel?
     var presenter: MePresenter!
@@ -54,12 +56,29 @@ class MeView: UIViewController {
     }
     
     private func setupUI() {
+        setProgressLabel()
         setSessionSequenceLabel()
         setSessionSequenceTextLabel()
         setMeditationNumber()
         setMeditationText()
         setOverallTime()
         setOverallTimeText()
+        setAchievementsLabel()
+    }
+    
+    private func setProgressLabel() {
+        view.addSubview(progressLabel)
+        progressLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            progressLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            progressLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            progressLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            progressLabel.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
+        progressLabel.backgroundColor = .systemPink
+        progressLabel.text = "Прогресс"
     }
     
     private func setSessionSequenceLabel() {
@@ -67,7 +86,7 @@ class MeView: UIViewController {
         sessionSequence.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            sessionSequence.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
+            sessionSequence.topAnchor.constraint(equalTo: progressLabel.bottomAnchor, constant: 20),
             sessionSequence.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             sessionSequence.widthAnchor.constraint(equalToConstant: 40),
             sessionSequence.heightAnchor.constraint(equalToConstant: 40)
@@ -81,8 +100,8 @@ class MeView: UIViewController {
         sessionSequenceText.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            sessionSequenceText.topAnchor.constraint(equalTo: sessionSequence.bottomAnchor, constant: 10),
-            sessionSequenceText.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            sessionSequenceText.topAnchor.constraint(equalTo: sessionSequence.topAnchor),
+            sessionSequenceText.leftAnchor.constraint(equalTo: sessionSequence.rightAnchor, constant: 20),
             sessionSequenceText.widthAnchor.constraint(equalToConstant: 200),
             sessionSequenceText.heightAnchor.constraint(equalToConstant: 40)
         ])
@@ -96,7 +115,7 @@ class MeView: UIViewController {
         meditationNumber.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            meditationNumber.topAnchor.constraint(equalTo: sessionSequenceText.bottomAnchor, constant: 10),
+            meditationNumber.topAnchor.constraint(equalTo: sessionSequenceText.bottomAnchor, constant: 20),
             meditationNumber.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             meditationNumber.widthAnchor.constraint(equalToConstant: 40),
             meditationNumber.heightAnchor.constraint(equalToConstant: 40)
@@ -110,8 +129,8 @@ class MeView: UIViewController {
         meditationText.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            meditationText.topAnchor.constraint(equalTo: meditationNumber.bottomAnchor, constant: 20),
-            meditationText.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            meditationText.topAnchor.constraint(equalTo: meditationNumber.topAnchor),
+            meditationText.leftAnchor.constraint(equalTo: meditationNumber.rightAnchor, constant: 20),
             meditationText.widthAnchor.constraint(equalToConstant: 200),
             meditationText.heightAnchor.constraint(equalToConstant: 40)
         ])
@@ -125,7 +144,7 @@ class MeView: UIViewController {
         overallTime.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            overallTime.topAnchor.constraint(equalTo: meditationText.bottomAnchor, constant: 10),
+            overallTime.topAnchor.constraint(equalTo: meditationText.bottomAnchor, constant: 20),
             overallTime.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             overallTime.widthAnchor.constraint(equalToConstant: 40),
             overallTime.heightAnchor.constraint(equalToConstant: 40)
@@ -139,8 +158,8 @@ class MeView: UIViewController {
         overallTimeText.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            overallTimeText.topAnchor.constraint(equalTo: overallTime.bottomAnchor, constant: 20),
-            overallTimeText.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            overallTimeText.topAnchor.constraint(equalTo: overallTime.topAnchor),
+            overallTimeText.leftAnchor.constraint(equalTo: overallTime.rightAnchor, constant: 20),
             overallTimeText.widthAnchor.constraint(equalToConstant: 200),
             overallTimeText.heightAnchor.constraint(equalToConstant: 40)
         ])
@@ -148,6 +167,23 @@ class MeView: UIViewController {
         overallTimeText.backgroundColor = .systemPink
         overallTimeText.text = "Всего минут"
     }
+    
+    private func setAchievementsLabel() {
+        view.addSubview(achievementsLabel)
+        achievementsLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            achievementsLabel.topAnchor.constraint(equalTo: overallTimeText.bottomAnchor, constant: 20),
+            achievementsLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            achievementsLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            achievementsLabel.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
+        achievementsLabel.backgroundColor = .systemPink
+        achievementsLabel.text = "Достижения"
+    }
+    
+    
 }
 
 extension MeView: MeViewInput {
