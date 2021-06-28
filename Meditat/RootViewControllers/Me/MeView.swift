@@ -24,6 +24,9 @@ class MeView: UIViewController {
     let overallTimeText = UILabel()
     let achievementsLabel = UILabel()
     
+    let horizontalStackViewOne = UIStackView()
+    let horizontalStackViewTwo = UIStackView()
+    
     var entity: SessionModel?
     var presenter: MePresenter!
     
@@ -56,6 +59,7 @@ class MeView: UIViewController {
     }
     
     private func setupUI() {
+        
         setProgressLabel()
         setSessionSequenceLabel()
         setSessionSequenceTextLabel()
@@ -64,6 +68,9 @@ class MeView: UIViewController {
         setOverallTime()
         setOverallTimeText()
         setAchievementsLabel()
+        
+        initStackViewOne()
+        initStackViewTwo()
     }
     
     private func setProgressLabel() {
@@ -173,17 +180,119 @@ class MeView: UIViewController {
         achievementsLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            achievementsLabel.topAnchor.constraint(equalTo: overallTimeText.bottomAnchor, constant: 20),
+            achievementsLabel.topAnchor.constraint(equalTo: overallTimeText.bottomAnchor, constant: 10),
             achievementsLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             achievementsLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            achievementsLabel.heightAnchor.constraint(equalToConstant: 40)
+            achievementsLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
         
         achievementsLabel.backgroundColor = .systemPink
         achievementsLabel.text = "Достижения"
     }
     
+    private func initStackViewOne() {
+        
+        horizontalStackViewOne.axis = .horizontal
+        horizontalStackViewOne.distribution = .equalSpacing
+        
+        let checkboxView = makeCheckboxView(text: "2 дня медитаций")
+        let checkboxView2 = makeCheckboxView(text: "3 дня медитаций")
+        let checkboxView3 = makeCheckboxView(text: "5 дней медитаций")
+        
+        horizontalStackViewOne.addArrangedSubview(checkboxView)
+        horizontalStackViewOne.addArrangedSubview(checkboxView2)
+        horizontalStackViewOne.addArrangedSubview(checkboxView3)
+        
+        view.addSubview(horizontalStackViewOne)
+        horizontalStackViewOne.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            horizontalStackViewOne.topAnchor.constraint(equalTo: achievementsLabel.bottomAnchor, constant: 20),
+            horizontalStackViewOne.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            horizontalStackViewOne.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            horizontalStackViewOne.heightAnchor.constraint(equalToConstant: 110)
+        ])
+    }
     
+    private func initStackViewTwo() {
+        
+        horizontalStackViewTwo.axis = .horizontal
+        horizontalStackViewTwo.distribution = .equalSpacing
+        
+        let checkboxView4 = makeCheckboxView(text: "10 дней медитаций")
+        let checkboxView5 = makeCheckboxView(text: "20 дней медитаций")
+        let checkboxView6 = makeCheckboxView(text: "30 дней медитаций")
+        
+        horizontalStackViewTwo.addArrangedSubview(checkboxView4)
+        horizontalStackViewTwo.addArrangedSubview(checkboxView5)
+        horizontalStackViewTwo.addArrangedSubview(checkboxView6)
+        
+        view.addSubview(horizontalStackViewTwo)
+        horizontalStackViewTwo.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            horizontalStackViewTwo.topAnchor.constraint(equalTo: horizontalStackViewOne.bottomAnchor, constant: 20),
+            horizontalStackViewTwo.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            horizontalStackViewTwo.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            horizontalStackViewTwo.heightAnchor.constraint(equalToConstant: 110)
+        ])
+    }
+}
+
+extension MeView {
+    
+    private func makeCheckboxView(text: String) -> UIView {
+        
+        let checkboxView = UIView()
+        checkboxView.backgroundColor = .yellow
+        checkboxView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            checkboxView.widthAnchor.constraint(equalToConstant: 82),
+            checkboxView.heightAnchor.constraint(equalToConstant: 104)
+        ])
+        
+        let verticalStack = UIStackView()
+        verticalStack.axis = .vertical
+        verticalStack.backgroundColor = .blue
+        
+        checkboxView.addSubview(verticalStack)
+        verticalStack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            verticalStack.topAnchor.constraint(equalTo: checkboxView.topAnchor, constant: 4),
+            verticalStack.leftAnchor.constraint(equalTo: checkboxView.leftAnchor, constant: 4),
+            verticalStack.rightAnchor.constraint(equalTo: checkboxView.rightAnchor, constant: -4),
+            verticalStack.bottomAnchor.constraint(equalTo: checkboxView.bottomAnchor, constant: -4)
+        ])
+        
+        let checkboxImage = UIImageView()
+        checkboxImage.image = UIImage(systemName: "checkmark.square")
+        
+        verticalStack.addSubview(checkboxImage)
+        checkboxImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            checkboxImage.widthAnchor.constraint(equalToConstant: 54),
+            checkboxImage.heightAnchor.constraint(equalToConstant: 54),
+            checkboxImage.centerXAnchor.constraint(equalTo: verticalStack.centerXAnchor),
+            checkboxImage.topAnchor.constraint(equalTo: verticalStack.topAnchor, constant: 4)
+        ])
+        
+        let checkboxText = UILabel()
+        checkboxText.text = text
+        checkboxText.font = UIFont.systemFont(ofSize: 12)
+        checkboxText.numberOfLines = 2
+        checkboxText.textAlignment = .center
+        checkboxText.backgroundColor = .white
+        
+        verticalStack.addSubview(checkboxText)
+        checkboxText.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            checkboxText.topAnchor.constraint(equalTo: checkboxImage.bottomAnchor, constant: 6),
+            checkboxText.leftAnchor.constraint(equalTo: verticalStack.leftAnchor),
+            checkboxText.rightAnchor.constraint(equalTo: verticalStack.rightAnchor),
+            checkboxText.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        return checkboxView
+    }
 }
 
 extension MeView: MeViewInput {
