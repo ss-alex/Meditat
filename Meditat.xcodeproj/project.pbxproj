@@ -21,6 +21,7 @@
 		D961547325E3B9BE00DF06FA /* SubcategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961547225E3B9BE00DF06FA /* SubcategoryView.swift */; };
 		D961547725E3BADD00DF06FA /* SubcatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961547625E3BADD00DF06FA /* SubcatModel.swift */; };
 		D961547E25E3E07800DF06FA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961547D25E3E07800DF06FA /* TableViewCell.swift */; };
+		D973781C268A4E7E00F3F766 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973781B268A4E7E00F3F766 /* CheckboxView.swift */; };
 		D97C0F7F267B6BC0000CD444 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C0F7E267B6BC0000CD444 /* SessionModel.swift */; };
 		D9809C1125DF7E5200DF52BF /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1025DF7E5200DF52BF /* MeView.swift */; };
 		D9809C1425DF7E9600DF52BF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9809C1325DF7E9600DF52BF /* SettingsView.swift */; };
@@ -50,6 +51,7 @@
 		D961547225E3B9BE00DF06FA /* SubcategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryView.swift; sourceTree = "<group>"; };
 		D961547625E3BADD00DF06FA /* SubcatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcatModel.swift; sourceTree = "<group>"; };
 		D961547D25E3E07800DF06FA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		D973781B268A4E7E00F3F766 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		D97C0F7E267B6BC0000CD444 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
 		D9809C1025DF7E5200DF52BF /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		D9809C1325DF7E9600DF52BF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		D93F4F9D2676035E00F69C14 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				D973781A268A4E4B00F3F766 /* Views */,
 				D9809C1025DF7E5200DF52BF /* MeView.swift */,
 				D93F4FC526778A2600F69C14 /* MePresenter.swift */,
 			);
@@ -181,6 +184,14 @@
 				D9809C1C25DFD9D800DF52BF /* Button.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		D973781A268A4E4B00F3F766 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D973781B268A4E7E00F3F766 /* CheckboxView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D97C0F7D267B6BA0000CD444 /* Entities */ = {
@@ -358,6 +369,7 @@
 				D93F4FC626778A2600F69C14 /* MePresenter.swift in Sources */,
 				D961547E25E3E07800DF06FA /* TableViewCell.swift in Sources */,
 				D961251125DF7A2A00B80C42 /* SceneDelegate.swift in Sources */,
+				D973781C268A4E7E00F3F766 /* CheckboxView.swift in Sources */,
 				D9809C1425DF7E9600DF52BF /* SettingsView.swift in Sources */,
 				D93F4FC32677723300F69C14 /* MeditatCoreData.xcdatamodeld in Sources */,
 				D961547325E3B9BE00DF06FA /* SubcategoryView.swift in Sources */,
