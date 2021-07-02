@@ -11,6 +11,7 @@ protocol MeViewInput: class {
     func setSessionSequenceText(_ number: Int)
     func setMeditationNumber(_ number: Int)
     func setupOverallTimeLabel(_ timeString: String)
+    func setupCheckboxStyles(checboxNumber: Int, imageColor: UIColor, textColor: UIColor)
 }
 
 class MeView: UIViewController {
@@ -27,7 +28,7 @@ class MeView: UIViewController {
     let horizontalStackViewOne = UIStackView()
     let horizontalStackViewTwo = UIStackView()
     
-    var checkboxView = CheckboxView(text: "2 дня медитаций")
+    var checkboxView1 = CheckboxView(text: "2 дня медитаций")
     var checkboxView2 = CheckboxView(text: "3 дня медитаций")
     var checkboxView3 = CheckboxView(text: "5 дней медитаций")
     var checkboxView4 = CheckboxView(text: "10 дней медитаций")
@@ -201,7 +202,7 @@ class MeView: UIViewController {
         
         horizontalStackViewOne.axis = .horizontal
         horizontalStackViewOne.distribution = .fillEqually
-        horizontalStackViewOne.addArrangedSubview(checkboxView)
+        horizontalStackViewOne.addArrangedSubview(checkboxView1)
         horizontalStackViewOne.addArrangedSubview(checkboxView2)
         horizontalStackViewOne.addArrangedSubview(checkboxView3)
         
@@ -247,4 +248,66 @@ extension MeView: MeViewInput {
     func setSessionSequenceText(_ number: Int) {
         sessionSequence.text = "\(number)"
     }
+    
+    func setupCheckboxStyles(checboxNumber: Int, imageColor: UIColor, textColor: UIColor) {
+   
+        switch checboxNumber {
+        case 1:
+            print("checboxNumber - 1")
+            checkboxView1.checkboxImage.tintColor = imageColor
+            checkboxView1.checkboxText.textColor = textColor
+        case 2:
+            print("checboxNumber - 2")
+            checkboxView1.checkboxImage.tintColor = imageColor
+            checkboxView1.checkboxText.textColor = textColor
+            checkboxView2.checkboxImage.tintColor = imageColor
+            checkboxView2.checkboxText.textColor = textColor
+        case 3:
+            print("checboxNumber - 3")
+            checkboxView1.checkboxImage.tintColor = imageColor
+            checkboxView1.checkboxText.textColor = textColor
+            checkboxView2.checkboxImage.tintColor = imageColor
+            checkboxView2.checkboxText.textColor = textColor
+            checkboxView3.checkboxImage.tintColor = imageColor
+            checkboxView3.checkboxText.textColor = textColor
+        case 4:
+            print("checboxNumber - 4")
+            checkboxView1.checkboxImage.tintColor = imageColor
+            checkboxView1.checkboxText.textColor = textColor
+            checkboxView2.checkboxImage.tintColor = imageColor
+            checkboxView2.checkboxText.textColor = textColor
+            checkboxView3.checkboxImage.tintColor = imageColor
+            checkboxView3.checkboxText.textColor = textColor
+            checkboxView4.checkboxImage.tintColor = imageColor
+            checkboxView4.checkboxText.textColor = textColor
+        case 5:
+            print("checboxNumber - 5")
+            checkboxView1.checkboxImage.tintColor = imageColor
+            checkboxView1.checkboxText.textColor = textColor
+            checkboxView2.checkboxImage.tintColor = imageColor
+            checkboxView2.checkboxText.textColor = textColor
+            checkboxView3.checkboxImage.tintColor = imageColor
+            checkboxView3.checkboxText.textColor = textColor
+            checkboxView4.checkboxImage.tintColor = imageColor
+            checkboxView4.checkboxText.textColor = textColor
+            checkboxView5.checkboxImage.tintColor = imageColor
+            checkboxView5.checkboxText.textColor = textColor
+        case 6:
+            print("checboxNumber - 6")
+            checkboxView1.checkboxImage.tintColor = imageColor
+            checkboxView1.checkboxText.textColor = textColor
+            checkboxView2.checkboxImage.tintColor = imageColor
+            checkboxView2.checkboxText.textColor = textColor
+            checkboxView3.checkboxImage.tintColor = imageColor
+            checkboxView3.checkboxText.textColor = textColor
+            checkboxView4.checkboxImage.tintColor = imageColor
+            checkboxView4.checkboxText.textColor = textColor
+            checkboxView5.checkboxImage.tintColor = imageColor
+            checkboxView5.checkboxText.textColor = textColor
+            checkboxView6.checkboxImage.tintColor = imageColor
+            checkboxView6.checkboxText.textColor = textColor
+        default: return
+        }
+    }
+    
 }

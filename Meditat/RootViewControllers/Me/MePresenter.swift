@@ -51,82 +51,11 @@ class MePresenter: MePresenterProtocol {
         }
         
         view.setSessionSequenceText(counter)
+        
+        // logic trial:
+        // нужно поменять цвета для текста, не тинт калор, а что-то другое
+        setupCheckboxes(counter: counter)
     }
-    
-    /*func setSessionSequence() {
-        var counter = 0
-        
-        let result = fetchSessionsFromDB()
-        let dateArray = result.compactMap { $0.value(forKey: "date") as! Date }
-        
-        var array: [Int] = []
-        
-        let dateArraySorted = dateArray.sorted(by: > )
-        //print("--->>> dateArraySorted = \(dateArraySorted)")
-        //print("--->>> dateArraySorted.count = \(dateArraySorted.count)")
-        
-        let dayDiffs = dateArraySorted.map { (date) in
-        
-            //print("--->>> counter = \(counter)")
-            
-            if counter == 0 {
-                let y = Calendar.current.dateComponents([.hour], from: date, to: Date()).hour!
-                array.append(y)
-                counter += 1
-            } else {
-                //print("--->>> date = \(date)")
-                //print("--->>> dateArraySorted[counter] = \(dateArraySorted[counter - 1])")
-                let x = Calendar.current.dateComponents([.hour], from: date, to: dateArraySorted[counter - 1]).hour!
-                array.append(x)
-                
-                if counter < dateArraySorted.count - 1 {
-                    counter += 1
-                }
-            }
-        }
-        
-        //print("--->>> array = \(array)")
-        var counter2 = 0
-        //var index = 0
-        
-        for (prev, next) in zip(array, array.dropFirst()) {
-            
-            //index += 1
-            
-            if next - prev <= 24 {
-                
-                //let z = Calendar.current.dateComponents([.hour], from: prev, to: Date() )
-                //if Date()array[index - 1]{
-                    
-                //}
-                
-                counter2 += 1
-                //print("--->>> counter2 = \(counter2)")
-            }
-        }
-        
-        print("--------->>>>>>>>>>>>")
-        var counter3 = 0
-        let arrayOfDates = dateArraySorted
- 
-        var index = 0
-        
-        for (prev, next) in zip(arrayOfDates, arrayOfDates.dropFirst()) {
-            
-            let z = Calendar.current.dateComponents([.hour], from: next, to: prev).hour!
-            print("--->>> z = \(z)")
-            index += 1
-            print("--->>> index  = \(index)")
-            
-            if z <= 24 {
-                if index > 0 {
-                    if Calendar.current.dateComponents([.hour], from: arrayOfDates[index - 1], to: prev).hour! <= 24 {
-                        counter3 += 1
-                    }
-                }
-            }
-        }
-    }*/
     
     func setMeditationNumber() {
         
@@ -160,46 +89,41 @@ class MePresenter: MePresenterProtocol {
             return []
         }
     }
-}
-
-extension Date {
-    /// Returns the amount of years from another date
-    func years(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.year], from: date, to: self).year ?? 0
-    }
-    /// Returns the amount of months from another date
-    func months(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.month], from: date, to: self).month ?? 0
-    }
-    /// Returns the amount of weeks from another date
-    func weeks(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.weekOfMonth], from: date, to: self).weekOfMonth ?? 0
-    }
-    /// Returns the amount of days from another date
-    func days(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.day], from: date, to: self).day ?? 0
-    }
-    /// Returns the amount of hours from another date
-    func hours(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.hour], from: date, to: self).hour ?? 0
-    }
-    /// Returns the amount of minutes from another date
-    func minutes(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.minute], from: date, to: self).minute ?? 0
-    }
-    /// Returns the amount of seconds from another date
-    func seconds(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.second], from: date, to: self).second ?? 0
-    }
-    /// Returns the a custom time interval description from another date
-    func offset(from date: Date) -> String {
-        if years(from: date)   > 0 { return "\(years(from: date))y"   }
-        if months(from: date)  > 0 { return "\(months(from: date))M"  }
-        if weeks(from: date)   > 0 { return "\(weeks(from: date))w"   }
-        if days(from: date)    > 0 { return "\(days(from: date))d"    }
-        if hours(from: date)   > 0 { return "\(hours(from: date))h"   }
-        if minutes(from: date) > 0 { return "\(minutes(from: date))m" }
-        if seconds(from: date) > 0 { return "\(seconds(from: date))s" }
-        return ""
+    
+    private func setupCheckboxes(counter: Int) {
+        
+        switch counter {
+        case _ where counter < 2:
+            print("0 или 1 медитация")
+            // все checkboxes сделать серыми
+        //case _ where counter >= 2:
+        case 2..<3:
+            print("2 дня медитаций")
+            // setupCheckboxOne
+            view.setupCheckboxStyles(checboxNumber: 1, imageColor: .green, textColor: .green)
+        case _ where counter >= 3:
+            print("3 дня медитаций")
+            //view.setupCheckboxOne(imageColor: .green, textColor: .green)
+            // setupCheckboxOne
+            // setupCheckboxTwo
+            view.setupCheckboxStyles(checboxNumber: 2, imageColor: .green, textColor: .green)
+        case 5:
+            print("5 дней медитаций")
+            // setupCheckboxOne, Two, Three
+            view.setupCheckboxStyles(checboxNumber: 3, imageColor: .green, textColor: .green)
+        case 10:
+            print("10 дней медитаций")
+            // setupCheckboxOne, Two, Three, Four
+            view.setupCheckboxStyles(checboxNumber: 4, imageColor: .green, textColor: .green)
+        case 20:
+            print("20 дней медитаций")
+            // setupChecboxOne, Two, Three, Four, Five
+            view.setupCheckboxStyles(checboxNumber: 5, imageColor: .green, textColor: .green)
+        case 30:
+            print("30 дней медитаций")
+            // setupCheckboxOne, Two, Three, Four, Five, Six
+            view.setupCheckboxStyles(checboxNumber: 6, imageColor: .green, textColor: .green)
+        default: return
+        }
     }
 }
