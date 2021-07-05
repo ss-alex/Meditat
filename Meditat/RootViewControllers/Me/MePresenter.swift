@@ -91,39 +91,29 @@ class MePresenter: MePresenterProtocol {
     }
     
     private func setupCheckboxes(counter: Int) {
-        
+
         switch counter {
-        case _ where counter < 2:
-            print("0 или 1 медитация")
-            // все checkboxes сделать серыми
-        //case _ where counter >= 2:
+        case 0..<2:
+            print("no checkboxes being filled")
         case 2..<3:
-            print("2 дня медитаций")
-            // setupCheckboxOne
+            print("выделяется чекбокс №1")
             view.setupCheckboxStyles(checboxNumber: 1, imageColor: .green, textColor: .green)
-        case _ where counter >= 3:
-            print("3 дня медитаций")
-            //view.setupCheckboxOne(imageColor: .green, textColor: .green)
-            // setupCheckboxOne
-            // setupCheckboxTwo
+        case 3..<5:
+            print("выделяется чекбокс №1, 2")
             view.setupCheckboxStyles(checboxNumber: 2, imageColor: .green, textColor: .green)
-        case 5:
-            print("5 дней медитаций")
-            // setupCheckboxOne, Two, Three
+        case 5..<10:
+            print("выделяется чекбокс №1, 2, 3")
             view.setupCheckboxStyles(checboxNumber: 3, imageColor: .green, textColor: .green)
-        case 10:
-            print("10 дней медитаций")
-            // setupCheckboxOne, Two, Three, Four
+        case 10..<20:
+            print("выделяется чекбокс №1, 2, 3, 4")
             view.setupCheckboxStyles(checboxNumber: 4, imageColor: .green, textColor: .green)
-        case 20:
-            print("20 дней медитаций")
-            // setupChecboxOne, Two, Three, Four, Five
+        case 20..<30:
+            print("выделяется чекбокс №1, 2, 3, 4, 5")
             view.setupCheckboxStyles(checboxNumber: 5, imageColor: .green, textColor: .green)
-        case 30:
-            print("30 дней медитаций")
-            // setupCheckboxOne, Two, Three, Four, Five, Six
+        case 30... :
+            print("выделяется чекбокс №1, 2, 3, 4, 5, 6")
             view.setupCheckboxStyles(checboxNumber: 6, imageColor: .green, textColor: .green)
-        default: return
+        default: break
         }
     }
 }
